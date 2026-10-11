@@ -1,0 +1,26 @@
+<!-- CANONICAL SHARED HEADER. Do not edit per page.
+     Copy this block into every page, replacing {{ROOT}} with the relative
+     path to the site root: "" for index.html, "../" for projects/*.html.
+     After changing it here, update every page so they stay identical. -->
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ROOT}}index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="{{ROOT}}index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="{{ROOT}}index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="{{ROOT}}index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="{{ROOT}}docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->

@@ -1,28 +1,472 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
-  <title>Vishek Masalia's Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vishek Masalia | Robotics &amp; Mechanical Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Vishek Masalia, M.S.E. Robotics student at Johns Hopkins University: haptic devices, robot-arm control, medical device hardware and Formula SAE hardware.">
+  <link rel="canonical" href="https://vishekm.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vishek Masalia | Robotics &amp; Mechanical Engineering Portfolio">
+  <meta property="og:description" content="M.S.E. Robotics student at Johns Hopkins University. Selected projects in haptics, robot-arm control, medical device hardware and Formula SAE hardware.">
+  <meta property="og:url" content="https://vishekm.github.io/">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/home/pedal-box-cad-annotated.jpg">
+  <!-- TODO: replace og:image with a dedicated 1200x630 social card; current image is 926x694. -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body style="text-align:center; font-family: Arial, sans-serif; margin-top: 120px; background: linear-gradient(135deg, #eef2f7, #dbe3ee);">
-  <h1 style="font-size: 36px;">Vishek Masalia</h1>
-  <p style="font-size: 18px; color: #555;">
-    Robotics & Mechatronics Portfolio
-  </p>
-  <a href="PortfolioFeb26.pdf" target="_blank">
-    <button style="
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      background-color: #1f2937;
-      color: white;
-      cursor: pointer;
-    ">
-      View Portfolio (PDF)
-    </button>
-  </a>
-  <p style="margin-top: 30px; font-size: 14px; color: #777;">
-    Just a PDF. I promise.
-  </p>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div>
+        <p class="eyebrow">Portfolio · Robotics &amp; Mechanical Engineering</p>
+        <h1 class="hero__title" id="hero-title">Vishek Masalia</h1>
+        <p class="hero__statement">
+          M.S.E. Robotics student at Johns Hopkins University, with a B.S. in Mechanical Engineering from the University of Illinois Chicago.
+          This site documents hardware and robotics projects I have designed, built and tested.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">View Projects <span class="arrow" aria-hidden="true">↓</span></a>
+          <a class="btn btn--ghost" href="docs/resume/MasterResumeOct26.pdf" download>Download Resume <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero__summary">
+          <span class="label">Toolchain</span>ROS 2 · RViz · C++ · Python · MATLAB · SolidWorks · 3D printing
+        </p>
+      </div>
+
+      <aside class="spec" aria-label="Summary">
+        <div class="spec__head"><span class="label">Spec sheet</span><span class="label">REV 2026</span></div>
+        <dl class="spec__rows">
+          <div class="spec__row"><dt>Program</dt><dd>M.S.E. Robotics, Johns Hopkins University. Expected May 2027</dd></div>
+          <div class="spec__row"><dt>Previous</dt><dd>B.S. Mechanical Engineering, University of Illinois Chicago. 2021–2024</dd></div>
+          <div class="spec__row"><dt>Selected work</dt><dd>Haptic interfaces · Robot-arm Cartesian control · Medical device hardware · Formula SAE hardware</dd></div>
+          <div class="spec__row"><dt>Current projects</dt><dd>
+            <a href="projects/lerobot-so101.html">LeRobot SO-101</a><br>
+            <a href="projects/aplc.html">APLC</a>
+          </dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ IN PROGRESS (status labels required, CLAUDE.md honesty rules) ============ -->
+  <section class="section section--tight" id="current" aria-labelledby="current-title">
+    <div class="container">
+      <div class="wip">
+        <div class="wip__head"><h2 class="label" id="current-title">Currently in progress</h2><span class="section__index">SEC. 00</span></div>
+        <div class="wip__grid">
+
+          <!-- content/projects/lerobot-so101.md -->
+          <article class="wip-card wip-card--media">
+            <div class="wip-card__body">
+              <div class="current__meta"><span class="status">In progress</span><span class="label">EN.601.698 · Fall 2026 · Team of 3</span></div>
+              <h3 class="wip-row__title"><a href="projects/lerobot-so101.html">LeRobot SO-101 Robot Learning</a></h3>
+              <p class="wip-row__text">Leader-follower SO-101 arms for robot learning: a human moves the leader arm and the follower reproduces the motion. Assembled and calibrated the arms with the team.</p>
+              <div class="wip-card__lists">
+                <div><span class="label">Done so far</span><ul><li>Both arms built</li><li>Joints calibrated</li><li>Leader-follower teleoperation working</li></ul></div>
+                <div><span class="label">Planned</span><ul><li>Camera-based perception</li><li>Demonstrations and policy training</li><li>Policy deployment on the arm</li></ul></div>
+              </div>
+            </div>
+            <figure class="wip-card__video">
+              <!-- VIDEO: web copy 540x960, 8.2 s, 0.83 MB (source: videos/LeRobot_SO_101_arm/LeRobot_SO_101_arm_calibration.mp4, 1080x1920, 20.8 MB). Autoplay, muted, looped. js/main.js pauses it for prefers-reduced-motion and shows controls. -->
+              <video autoplay muted loop playsinline preload="auto" width="540" height="960" poster="assets/img/home/lerobot-teleop-poster.jpg" aria-label="Leader-follower teleoperation: a hand moves the dark leader arm and the white follower arm copies it.">
+                <source src="assets/video/lerobot-teleop.mp4" type="video/mp4">
+              </video>
+              <figcaption class="fig-label">Fig. A · Teleoperation</figcaption>
+            </figure>
+          </article>
+
+          <!-- content/projects/aplc.md (no images or videos exist; text-only by design) -->
+          <article class="wip-card">
+            <div class="wip-card__body">
+              <div class="current__meta"><span class="status">Concept</span><span class="label">Independent study · Sep 2026–present</span></div>
+              <h3 class="wip-row__title"><a href="projects/aplc.html">Autonomous Personal Load Carrier (APLC)</a></h3>
+              <p class="wip-row__text">Research concept for a mobile robot that carries loads between a vehicle and a home, including ramps, stairs and thresholds. Working on the mechanical and electrical systems with security, perception, electrical and mechanical subteams.</p>
+              <div class="wip-card__lists">
+                <div><span class="label">Done so far</span><ul><li>Brainstorming phase; no hardware built yet</li></ul></div>
+                <div><span class="label">Planned</span><ul><li>Chassis design</li><li>Grocery-picking mechanism</li><li>Stair climbing</li></ul></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS (tier: featured, projects-index.md) ============ -->
+  <section class="section section--featured" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2 class="section__title" id="projects-title">Featured projects</h2>
+        </div>
+        <span class="section__index">SEC. 01</span>
+      </div>
+
+      <div class="projects">
+
+        <!-- PROJECT 01: content/projects/haptic-grasping-feedback.md -->
+        <article class="project-card reveal">
+          <figure class="project-card__media">
+            <a class="plate plate--native" href="projects/haptic-grasping-feedback.html" tabindex="-1" aria-hidden="true">
+              <!-- LOW-RES SOURCE: 606x462 px. Displayed at natural size (no upscaling). TODO: higher-res CAD render if available. -->
+              <img src="assets/img/home/haptic-gripper-cad-annotated.png" width="606" height="462" alt="Annotated CAD render of the haptic gripper: brushed DC motor, linear capstan, pulley, magnet, linkage, slider, fingerpads and Hapkit board mount.">
+            </a>
+            <figcaption class="figcaption"><span class="fig-label">Fig. 01: Device CAD, annotated</span><span>Report Fig. 2</span></figcaption>
+          </figure>
+          <div>
+            <div class="project-card__label">
+              <span class="project-card__num">PROJECT 01</span>
+              <span class="label">JHU · EN.530.691 · 2025</span>
+            </div>
+            <h3 class="project-card__title"><a href="projects/haptic-grasping-feedback.html">Grasping Force Feedback for da Vinci Surgical Robots</a></h3>
+            <p class="project-card__text">A 3D-printed, 1:1.2 scale replica of the da Vinci leader-hand gripper, driven by a capstan mechanism and a Hapkit 3.0 board, renders grasping forces that let users tell free space, soft tissue and hard tissue apart. Measured forces: free space 0-0.05 N, soft tissue 1-3 N, hard tissue 2-4 N.</p>
+            <p class="project-card__role"><strong>Role · team of 4</strong>Project lead: gripper CAD design, 3D printing, prototyping; co-developed the board code for the tissue states.</p>
+            <ul class="tag-list" aria-label="Tags">
+              <li class="tag">Haptics</li><li class="tag">Capstan drive</li><li class="tag">Hapkit 3.0</li><li class="tag">C++</li><li class="tag">CAD</li><li class="tag">3D printing</li>
+            </ul>
+            <a class="link-arrow" href="projects/haptic-grasping-feedback.html">View project <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: content/projects/ur5e-autonomous-manipulation.md -->
+        <article class="project-card reveal">
+          <figure class="project-card__media">
+            <a class="plate plate--fill" href="projects/ur5e-autonomous-manipulation.html" tabindex="-1" aria-hidden="true">
+              <!-- LOW-RES SOURCE: 399x454 px, (a)-(d) labels baked in. Scaled to fill the plate height (~1.06x upscale at 1440 px wide), per Vishek 2026-10-10. TODO: higher-res photos or a video still. -->
+              <img src="assets/img/home/ur5e-precision-evaluation-motion.png" width="399" height="454" loading="lazy" alt="Four photos of the UR5e arm and gripper approaching a white foam cube: above it, touching the top, mid-transition, and at a side face.">
+            </a>
+            <figcaption class="figcaption"><span class="fig-label">Fig. 02: Precision evaluation task, (a)–(d)</span><span>Real robot</span></figcaption>
+          </figure>
+          <div>
+            <div class="project-card__label">
+              <span class="project-card__num">PROJECT 02</span>
+              <span class="label">JHU · EN.530.646 · 2025</span>
+            </div>
+            <h3 class="project-card__title"><a href="projects/ur5e-autonomous-manipulation.html">UR5e Autonomous Push-and-Place Manipulation</a></h3>
+            <p class="project-card__text">A UR5e arm, taught a start pose in freedrive mode, autonomously pushes a foam cube about 16 cm along a straight line and back. Inverse-kinematics and resolved-rate Cartesian control were compared on the real robot through ROS 2 and MATLAB RTDE; IK position error at the waypoints was 0.001485–0.00712 mm, against 5.259–10.000 mm for RR.</p>
+            <p class="project-card__role"><strong>Role · 2-person core team</strong>Robotics Control Engineer: controls, ROS 2 and MATLAB RTDE implementation, hardware execution; designed the IK solution filter.</p>
+            <ul class="tag-list" aria-label="Tags">
+              <li class="tag">ROS 2</li><li class="tag">MATLAB RTDE</li><li class="tag">Inverse kinematics</li><li class="tag">Resolved-rate control</li><li class="tag">RViz</li>
+            </ul>
+            <a class="link-arrow" href="projects/ur5e-autonomous-manipulation.html">View project <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: content/projects/clarifeye.md -->
+        <article class="project-card reveal">
+          <figure class="project-card__media">
+            <a class="plate" href="projects/clarifeye.html" tabindex="-1" aria-hidden="true">
+              <!-- SOURCE 1003x1280 px (under 1200 px wide; portrait, cropped to 4:3 by CSS; appears AI-upscaled, no original exists). -->
+              <img src="assets/img/home/clarifeye-prototype-on-phone.jpg" width="1003" height="1280" loading="lazy" alt="Hand holding a smartphone fitted with the 3D-printed Clarifeye prototype: a brown X–Y slider over the camera and a pink lens housing holding the condenser lens.">
+            </a>
+            <figcaption class="figcaption"><span class="fig-label">Fig. 03: Prototype on phone</span><span>PLA, 20D condenser lens</span></figcaption>
+          </figure>
+          <div>
+            <div class="project-card__label">
+              <span class="project-card__num">PROJECT 03</span>
+              <span class="label">JHU · EN.520.427 · 2025</span>
+            </div>
+            <h3 class="project-card__title"><a href="projects/clarifeye.html">Clarifeye: Affordable AI-Based Fundus Imaging</a></h3>
+            <p class="project-card__text">A fully mechanical, 3D-printed handheld attachment designed to align any smartphone camera with a 20D condenser lens for retinal imaging, using X–Y slider alignment and threaded axial focus. It is the hardware half of a course startup concept for eye screening in low- and middle-income countries.</p>
+            <p class="project-card__role"><strong>Role · team of 4</strong>Hardware Design Lead: all CAD, 3D printing, prototyping and assembly; patent search. No part in the software.</p>
+            <ul class="tag-list" aria-label="Tags">
+              <li class="tag">SolidWorks</li><li class="tag">Optical alignment</li><li class="tag">3D printing (PLA)</li><li class="tag">Prototyping</li><li class="tag">Medical device</li>
+            </ul>
+            <a class="link-arrow" href="projects/clarifeye.html">View project <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- PROJECT 04: content/projects/adaptable-pedal-box.md -->
+        <article class="project-card reveal">
+          <figure class="project-card__media">
+            <a class="plate" href="projects/adaptable-pedal-box.html" tabindex="-1" aria-hidden="true">
+              <!-- SOURCE 926x694 px after cropping white margins from the 1920x1080 original (under 1200 px wide). TODO: re-export CAD render at higher resolution. -->
+              <img src="assets/img/home/pedal-box-cad-annotated.jpg" width="926" height="694" loading="lazy" alt="Annotated CAD render of the pedal box: brake and gas pedals, master cylinders, fluid reservoir mount, throttle sensors and stops, BOTS tab and baseplate.">
+            </a>
+            <figcaption class="figcaption"><span class="fig-label">Fig. 04: Final pedal box CAD, annotated</span><span>BOTS = Brake-Overtravel Switch</span></figcaption>
+          </figure>
+          <div>
+            <div class="project-card__label">
+              <span class="project-card__num">PROJECT 04</span>
+              <span class="label">UIC Senior Design · 2023–24</span>
+            </div>
+            <h3 class="project-card__title"><a href="projects/adaptable-pedal-box.html">Adaptable Pedal Box for FSAE Combustion and Electric Cars</a></h3>
+            <p class="project-card__text">A pedal box on a single mountable baseplate, so the same unit fits both UIC's combustion and electric Formula SAE cars. It was simulated at the 2 kN FSAE load case, iterated to reduce brake pedal mass from 304.54 g to 191.25 g, and won Best in Show (Mechanical &amp; Industrial) at the UIC Engineering Expo.</p>
+            <p class="project-card__role"><strong>Role · team of 4</strong>Mechanical Design &amp; Prototyping Engineer: majority of the CAD; all prototyping and assembly.</p>
+            <ul class="tag-list" aria-label="Tags">
+              <li class="tag">Formula SAE</li><li class="tag">SolidWorks</li><li class="tag">Brake geometry</li><li class="tag">Laser cutting</li><li class="tag">3D printing</li>
+            </ul>
+            <a class="link-arrow" href="projects/adaptable-pedal-box.html">View project <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ENGINEERING AREAS (groups = resume skill groups, content/site-profile.md) ============ -->
+  <section class="section" id="areas" aria-labelledby="areas-title">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">Capabilities</p>
+          <h2 class="section__title" id="areas-title">Engineering areas</h2>
+          <p class="section__intro">Grouped as on my resume, with the projects where each area was used.</p>
+        </div>
+        <span class="section__index">SEC. 02</span>
+      </div>
+      <div class="areas">
+        <div class="area">
+          <span class="label">Area 01</span>
+          <h3>Robotics &amp; Control</h3>
+          <ul class="area__skills">
+            <li class="tag">ROS 2</li><li class="tag">MoveIt</li><li class="tag">Rviz</li><li class="tag">MATLAB RTDE</li><li class="tag">Robot Kinematics &amp; Dynamics</li><li class="tag">Motion Planning</li><li class="tag">Cartesian Control (IK, Resolved-Rate)</li><li class="tag">Closed-Loop Control</li>
+          </ul>
+          <p class="area__used">Used in: <a href="projects/ur5e-autonomous-manipulation.html">UR5e push-and-place</a></p>
+        </div>
+        <div class="area">
+          <span class="label">Area 02</span>
+          <h3>Programming</h3>
+          <ul class="area__skills">
+            <li class="tag">C++</li><li class="tag">C (Embedded)</li><li class="tag">Python</li><li class="tag">MATLAB</li><li class="tag">Linux (Ubuntu)</li>
+          </ul>
+          <p class="area__used">Used in: <a href="projects/haptic-grasping-feedback.html">Haptic gripper</a> (C++), <a href="projects/ur5e-autonomous-manipulation.html">UR5e</a> (MATLAB)</p>
+        </div>
+        <div class="area">
+          <span class="label">Area 03</span>
+          <h3>Mechanical &amp; Mechatronic Design</h3>
+          <ul class="area__skills">
+            <li class="tag">System Design</li><li class="tag">DFM/DFA</li><li class="tag">Rapid Prototyping</li><li class="tag">Failure Analysis</li><li class="tag">Test &amp; Validation</li>
+          </ul>
+          <p class="area__used">Used in: <a href="projects/haptic-grasping-feedback.html">Haptic gripper</a>, <a href="projects/clarifeye.html">Clarifeye</a>, <a href="projects/adaptable-pedal-box.html">Pedal box</a></p>
+        </div>
+        <div class="area">
+          <span class="label">Area 04</span>
+          <h3>CAD &amp; Simulation</h3>
+          <ul class="area__skills">
+            <li class="tag">SolidWorks (CSWA)</li><li class="tag">Onshape</li><li class="tag">ANSYS (FEA)</li><li class="tag">Tolerance Analysis</li>
+          </ul>
+          <p class="area__used">Used in: <a href="projects/clarifeye.html">Clarifeye</a>, <a href="projects/adaptable-pedal-box.html">Pedal box</a>, <a href="projects/first-robots-to-the-rescue.html">Robots to the Rescue</a> (Onshape)</p>
+        </div>
+        <div class="area">
+          <span class="label">Area 05</span>
+          <h3>Fabrication</h3>
+          <ul class="area__skills">
+            <li class="tag">3D printing</li><li class="tag">Machining</li><li class="tag">Laser Cutting</li><li class="tag">Mechanical Assembly</li><li class="tag">Wood Shop</li>
+          </ul>
+          <p class="area__used">Used in: <a href="projects/haptic-grasping-feedback.html">Haptic gripper</a>, <a href="projects/clarifeye.html">Clarifeye</a>, <a href="projects/adaptable-pedal-box.html">Pedal box</a>, <a href="projects/autonomous-writing-device.html">Writing device</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSEWORK (studied in courses, NOT project experience; content supplied by Vishek 2026-10-10) ============ -->
+  <section class="section" id="coursework" aria-labelledby="coursework-title">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">Academics · JHU</p>
+          <h2 class="section__title" id="coursework-title">Coursework</h2>
+          <p class="section__intro">Relevant coursework and technical topics covered in class. Listed separately from project work.</p>
+        </div>
+        <span class="section__index">SEC. 03</span>
+      </div>
+      <div class="areas">
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 01</span></div>
+          <h3>Robot Devices: Kinematics, Dynamics &amp; Control</h3>
+          <ul class="area__skills"><li class="tag">Forward &amp; Inverse Kinematics</li><li class="tag">Product of Exponentials (PoE)</li><li class="tag">Rotation Representations &amp; Homogeneous Transformations</li><li class="tag">Robot Dynamics &amp; Wrenches</li><li class="tag">Resolved-Rate Control &amp; Singularities</li></ul>
+        </div>
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 02</span></div>
+          <h3>Algorithms for Sensor-Based Robotics</h3>
+          <ul class="area__skills"><li class="tag">Kalman Filters &amp; Extended Kalman Filters (EKF)</li><li class="tag">Bayes &amp; Particle Filters</li><li class="tag">SLAM (Simultaneous Localization and Mapping)</li><li class="tag">Hand-Eye Calibration</li><li class="tag">Sensor-Based State Estimation</li></ul>
+        </div>
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 03</span></div>
+          <h3>Robot Motion Planning</h3>
+          <ul class="area__skills"><li class="tag">Configuration Space (C-space) &amp; Obstacle Representation</li><li class="tag">Sampling-Based Planning: PRM &amp; RRT</li><li class="tag">Graph Search: Dijkstra &amp; A*</li><li class="tag">Potential Field Methods</li><li class="tag">Collision Detection &amp; Avoidance</li></ul>
+        </div>
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 04</span></div>
+          <h3>Machine Learning: Deep Learning</h3>
+          <ul class="area__skills"><li class="tag">Neural Networks &amp; Backpropagation</li><li class="tag">CNNs, RNNs &amp; Transformers</li><li class="tag">Vision Transformers (ViT)</li><li class="tag">Gradient-Based Optimization &amp; Adam</li><li class="tag">Regularization, Normalization &amp; Loss Functions</li><li class="tag">PyTorch &amp; JAX</li></ul>
+        </div>
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 05</span></div>
+          <h3>Haptic Interface Design for HRI</h3>
+          <ul class="area__skills"><li class="tag">Haptic Feedback &amp; Human-Robot Interaction</li><li class="tag">Just Noticeable Difference (JND)</li><li class="tag">Capstan-Driven Mechanisms</li><li class="tag">Motor Selection &amp; Actuator Integration</li><li class="tag">Mechanical Design &amp; Rapid Prototyping</li></ul>
+        </div>
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 06</span><span class="status">In progress</span></div>
+          <h3>Optimal Control for Space Systems</h3>
+          <ul class="area__skills"><li class="tag">Optimal Control &amp; Constrained Optimization</li><li class="tag">Quadratic Programming</li><li class="tag">Model Predictive Control (MPC)</li></ul>
+        </div>
+        <div class="area area--course">
+          <div class="area__meta"><span class="label">Course 07</span><span class="status">In progress</span></div>
+          <h3>Hands-On Robot Learning</h3>
+          <ul class="area__skills"><li class="tag">SO-101 Robotic Arm Assembly &amp; Calibration</li><li class="tag">Leader–Follower Teleoperation</li><li class="tag">Robot Learning &amp; Policy Deployment</li><li class="tag">Imitation Learning &amp; Dataset Collection</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 class="section__title" id="about-title">About me</h2>
+        </div>
+        <span class="section__index">SEC. 04</span>
+      </div>
+      <div class="about">
+        <figure class="about__photo">
+          <!-- HEADSHOT: single swap point. Source 1167x1332 px. -->
+          <img src="assets/img/home/hero.jpg" width="1167" height="1332" loading="lazy" alt="Headshot of Vishek Masalia">
+        </figure>
+        <div class="about__body">
+          <p>I'm a robotics graduate student at Johns Hopkins University (M.S.E. Robotics, expected May 2027), with a B.S. in Mechanical Engineering from the University of Illinois Chicago.</p>
+          <p>At UIC I was a member of ASME and SAE (Formula SAE Team), a teaching assistant in the Engineering Success Program, and a research intern in the Anand Research Group. Before university, I designed and built robots for FTC and WRO competitions in India.</p>
+          <ul class="recognition" aria-label="Recognition">
+            <li><span class="mono">2024</span><span>Best in Show, Mechanical &amp; Industrial category, UIC Engineering Expo (Adaptable Pedal Box)</span></li>
+            <li><span class="mono">2019–20</span><span>Collins Aerospace Innovative Award (Most Creative Robot Design), FTC, India</span></li>
+            <li><span class="mono">2019</span><span>3rd Place, WRO, India</span></li>
+            <li><span class="mono">2017–18</span><span>Finalist Alliance 1st Runner-Up, FTC, India</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION / EXPERIENCE TIMELINE (visually secondary) ============ -->
+  <section class="section" id="background" aria-labelledby="background-title">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">Background</p>
+          <h2 class="section__title" id="background-title">Education &amp; experience</h2>
+        </div>
+        <span class="section__index">SEC. 05</span>
+      </div>
+      <div class="timeline-grid">
+        <div class="timeline">
+          <h3>Education</h3>
+          <ol>
+            <li>
+              <div class="timeline__when">Expected May 2027</div>
+              <div class="timeline__what">Master of Science in Engineering in Robotics</div>
+              <div class="timeline__where">Johns Hopkins University (JHU), Baltimore, MD · GPA: 3.89/4.0</div>
+            </li>
+            <li>
+              <div class="timeline__when">Aug 2021 – Dec 2024</div>
+              <div class="timeline__what">Bachelor of Science in Mechanical Engineering</div>
+              <div class="timeline__where">University of Illinois Chicago (UIC), Chicago, IL · GPA: 3.94/4.0</div>
+              <p class="timeline__note">Coursework: Mechanical Design, Mechatronics, Heat Transfer, Numerical Methods</p>
+            </li>
+          </ol>
+        </div>
+        <div class="timeline">
+          <h3>Experience</h3>
+          <ol>
+            <li>
+              <div class="timeline__when">Aug 2024 – Dec 2024</div>
+              <div class="timeline__what">Teaching Assistant</div>
+              <div class="timeline__where">Engineering Success Program, UIC, Chicago, IL</div>
+              <p class="timeline__note">Led ENGR 100 sessions for 200+ students, covering foundational engineering concepts.</p>
+            </li>
+            <li>
+              <div class="timeline__when">Jun 2022 – Aug 2022</div>
+              <div class="timeline__what">Research Intern</div>
+              <div class="timeline__where">Anand Research Group, UIC, Chicago, IL</div>
+              <p class="timeline__note">Experimental studies on ice adhesion strength and polymer characterization for cold environments. Acknowledged in <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202206301" target="_blank" rel="noopener">"How to Select Phase Change Materials for Tuning Condensation and Frosting"</a>, Advanced Functional Materials (2022).</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESUME CTA ============ -->
+  <section class="section cta" aria-labelledby="cta-title">
+    <div class="container cta__inner">
+      <div>
+        <p class="label">Resume · PDF</p>
+        <h2 class="section__title" id="cta-title">Interested in the full background?</h2>
+        <p>Education, experience, skills and projects on two pages.</p>
+      </div>
+      <a class="btn btn--primary" href="docs/resume/MasterResumeOct26.pdf" download>Download Resume <span class="arrow" aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT (email + LinkedIn only) ============ -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="container contact__grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title" id="contact-title">Let's build something.</h2>
+      </div>
+      <ul class="contact__list">
+        <li><span class="label">Email</span><a href="mailto:vishekmasalia@gmail.com">vishekmasalia@gmail.com</a></li>
+        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">linkedin.com/in/vishekmasalia</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="js/main.js" defer></script>
 </body>
-</html>  
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800" role="img" aria-label="Headshot placeholder">
+  <!-- PLACEHOLDER: replace this file (or the <img src> in index.html #about) with the real headshot, 4:5 ratio -->
+  <rect width="640" height="800" fill="#ecedea"/>
+  <rect x="0.5" y="0.5" width="639" height="799" fill="none" stroke="#b9bbb5"/>
+  <circle cx="320" cy="300" r="120" fill="none" stroke="#b9bbb5" stroke-width="2"/>
+  <path d="M120 680c20-130 110-200 200-200s180 70 200 200" fill="none" stroke="#b9bbb5" stroke-width="2"/>
+  <line x1="0" y1="400" x2="640" y2="400" stroke="#d9dad6" stroke-dasharray="6 6"/>
+  <line x1="320" y1="0" x2="320" y2="800" stroke="#d9dad6" stroke-dasharray="6 6"/>
+  <text x="24" y="40" font-family="IBM Plex Mono, monospace" font-size="20" fill="#6b717a" letter-spacing="2">PHOTO PLACEHOLDER</text>
+  <text x="24" y="776" font-family="IBM Plex Mono, monospace" font-size="18" fill="#6b717a" letter-spacing="2">4:5 · SWAP FILE</text>
+</svg>
