@@ -493,3 +493,14 @@ a:hover { color: var(--c-accent); }
    Scale the poster so only the video area shows; the iframe itself is unaffected. */
 .yt--short { overflow: hidden; }
 .yt--short > img { transform: scale(1.34); }
+
+/* Stage 5 audit fix: let wide equations scroll inside their box instead of widening the column
+   (grid items default to min-width:auto). No visual change at normal widths. */
+.cs-steps { grid-template-columns: minmax(0, 1fr); }
+.cs-steps > li, .cs-split > *, .eq { min-width: 0; }
+@media (max-width: 960px) {
+  .cs-hero__grid, .cs-split, .cs-split--flip, .cs-split--narrow-fig, .cs-split--even { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* <picture> wrappers for WebP copies: transparent to layout, so existing img rules apply unchanged */
+picture { display: contents; }

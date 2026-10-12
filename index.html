@@ -12,10 +12,14 @@
   <meta property="og:title" content="Vishek Masalia | Robotics &amp; Mechanical Engineering Portfolio">
   <meta property="og:description" content="M.S.E. Robotics student at Johns Hopkins University. Selected projects in haptics, robot-arm control, medical device hardware and Formula SAE hardware.">
   <meta property="og:url" content="https://vishekm.github.io/">
-  <meta property="og:image" content="https://vishekm.github.io/assets/img/home/pedal-box-cad-annotated.jpg">
-  <!-- TODO: replace og:image with a dedicated 1200x630 social card; current image is 926x694. -->
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -145,7 +149,7 @@
           <figure class="project-card__media">
             <a class="plate plate--native" href="projects/haptic-grasping-feedback.html" tabindex="-1" aria-hidden="true">
               <!-- LOW-RES SOURCE: 606x462 px. Displayed at natural size (no upscaling). TODO: higher-res CAD render if available. -->
-              <img src="assets/img/home/haptic-gripper-cad-annotated.png" width="606" height="462" alt="Annotated CAD render of the haptic gripper: brushed DC motor, linear capstan, pulley, magnet, linkage, slider, fingerpads and Hapkit board mount.">
+              <img src="assets/img/home/haptic-gripper-cad-annotated.png" width="606" height="462" loading="lazy" alt="Annotated CAD render of the haptic gripper: brushed DC motor, linear capstan, pulley, magnet, linkage, slider, fingerpads and Hapkit board mount.">
             </a>
             <figcaption class="figcaption"><span class="fig-label">Fig. 01: Device CAD, annotated</span><span>Report Fig. 2</span></figcaption>
           </figure>
@@ -160,7 +164,7 @@
             <ul class="tag-list" aria-label="Tags">
               <li class="tag">Haptics</li><li class="tag">Capstan drive</li><li class="tag">Hapkit 3.0</li><li class="tag">C++</li><li class="tag">CAD</li><li class="tag">3D printing</li>
             </ul>
-            <a class="link-arrow" href="projects/haptic-grasping-feedback.html">View project <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="projects/haptic-grasping-feedback.html" aria-label="View project: Grasping Force Feedback for da Vinci Surgical Robots">View project <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
@@ -169,7 +173,7 @@
           <figure class="project-card__media">
             <a class="plate plate--fill" href="projects/ur5e-autonomous-manipulation.html" tabindex="-1" aria-hidden="true">
               <!-- SOURCE 601x533 px (replaced by Vishek 2026-10-10), (a)-(d) labels baked in. Fills plate height (~0.9x at 1440 px wide, no upscaling). -->
-              <img src="assets/img/home/ur5e-precision-evaluation-motion.png" width="601" height="533" loading="lazy" alt="Four photos of the UR5e arm and gripper approaching a white foam cube: above it, touching the top, mid-transition, and at a side face.">
+              <picture><source srcset="assets/img/home/ur5e-precision-evaluation-motion-opt.webp" type="image/webp"><img src="assets/img/home/ur5e-precision-evaluation-motion.png" width="601" height="533" loading="lazy" alt="Four photos of the UR5e arm and gripper approaching a white foam cube: above it, touching the top, mid-transition, and at a side face."></picture>
             </a>
             <figcaption class="figcaption"><span class="fig-label">Fig. 02: Precision evaluation task, (a)–(d)</span><span>Real robot</span></figcaption>
           </figure>
@@ -184,7 +188,7 @@
             <ul class="tag-list" aria-label="Tags">
               <li class="tag">ROS 2</li><li class="tag">MATLAB RTDE</li><li class="tag">Inverse kinematics</li><li class="tag">Resolved-rate control</li><li class="tag">RViz</li>
             </ul>
-            <a class="link-arrow" href="projects/ur5e-autonomous-manipulation.html">View project <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="projects/ur5e-autonomous-manipulation.html" aria-label="View project: UR5e Autonomous Push-and-Place Manipulation">View project <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
@@ -208,7 +212,7 @@
             <ul class="tag-list" aria-label="Tags">
               <li class="tag">SolidWorks</li><li class="tag">Optical alignment</li><li class="tag">3D printing (PLA)</li><li class="tag">Prototyping</li><li class="tag">Medical device</li>
             </ul>
-            <a class="link-arrow" href="projects/clarifeye.html">View project <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="projects/clarifeye.html" aria-label="View project: Clarifeye: Affordable AI-Based Fundus Imaging">View project <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
@@ -232,7 +236,7 @@
             <ul class="tag-list" aria-label="Tags">
               <li class="tag">Formula SAE</li><li class="tag">SolidWorks</li><li class="tag">Brake geometry</li><li class="tag">Laser cutting</li><li class="tag">3D printing</li>
             </ul>
-            <a class="link-arrow" href="projects/adaptable-pedal-box.html">View project <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="projects/adaptable-pedal-box.html" aria-label="View project: Adaptable Pedal Box for FSAE Combustion and Electric Cars">View project <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <!-- PROJECT 05: content/projects/autonomous-writing-device.md (promoted to featured by Vishek 2026-10-12) -->
@@ -257,7 +261,7 @@
             <ul class="tag-list" aria-label="Tags">
               <li class="tag">SolidWorks</li><li class="tag">Rack-and-pinion</li><li class="tag">Arduino UNO</li><li class="tag">C++</li><li class="tag">3D printing</li><li class="tag">Wood shop</li>
             </ul>
-            <a class="link-arrow" href="projects/autonomous-writing-device.html">View project <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="projects/autonomous-writing-device.html" aria-label="View project: Autonomous Writing Device">View project <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -385,7 +389,7 @@
           <ul class="area__skills">
             <li class="tag">SolidWorks (CSWA)</li><li class="tag">Onshape</li><li class="tag">ANSYS (FEA)</li><li class="tag">Tolerance Analysis</li>
           </ul>
-          <p class="area__used">Used in: <a href="projects/clarifeye.html">Clarifeye</a>, <a href="projects/adaptable-pedal-box.html">Pedal box</a>, <a href="projects/first-robots-to-the-rescue.html">Robots to the Rescue</a> (Onshape)</p>
+          <p class="area__used">Used in: <a href="projects/clarifeye.html">Clarifeye</a>, <a href="projects/adaptable-pedal-box.html">Pedal box</a>, <a href="#competitions">Robots to the Rescue</a> (Onshape)</p>
         </div>
         <div class="area">
           <span class="label">Area 05</span>
@@ -444,7 +448,8 @@
         <div class="area area--course">
           <div class="area__meta"><span class="label">Course 07</span><span class="status">In progress</span></div>
           <h3>Hands-On Robot Learning</h3>
-          <ul class="area__skills"><li class="tag">SO-101 Robotic Arm Assembly &amp; Calibration</li><li class="tag">Leader–Follower Teleoperation</li><li class="tag">Robot Learning &amp; Policy Deployment</li><li class="tag">Imitation Learning &amp; Dataset Collection</li></ul>
+          <span class="label">Course topics</span>
+          <ul class="area__skills" aria-label="Course topics"><li class="tag">SO-101 Robotic Arm Assembly &amp; Calibration</li><li class="tag">Leader–Follower Teleoperation</li><li class="tag">Robot Learning &amp; Policy Deployment</li><li class="tag">Imitation Learning &amp; Dataset Collection</li></ul>
         </div>
       </div>
     </div>

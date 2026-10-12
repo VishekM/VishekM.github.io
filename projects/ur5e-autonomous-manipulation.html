@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UR5e Autonomous Push-and-Place Manipulation | Vishek Masalia</title>
-  <meta name="description" content="Case study: inverse-kinematics vs resolved-rate Cartesian control on a real UR5e arm in ROS 2 and MATLAB RTDE, with a 16 cm autonomous push-and-place task and a near-contact precision task. JHU EN.530.646.">
+  <meta name="description" content="Case study: IK vs resolved-rate Cartesian control on a real UR5e in ROS 2 and MATLAB RTDE: a 16 cm push-and-place task and a near-contact task. JHU EN.530.646.">
   <link rel="canonical" href="https://vishekm.github.io/projects/ur5e-autonomous-manipulation.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="UR5e Autonomous Push-and-Place Manipulation | Vishek Masalia">
@@ -12,6 +12,9 @@
   <meta property="og:url" content="https://vishekm.github.io/projects/ur5e-autonomous-manipulation.html">
   <meta property="og:image" content="https://vishekm.github.io/assets/img/ur5e-autonomous-manipulation/precision-evaluation-motion.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -73,7 +76,7 @@
         <figure class="cs-fig">
           <div class="cs-fig__frame">
             <!-- SOURCE 601x533 px (images/ur5e_push_place/Motion_of_UR5e_for_precision_evaluation_task.png). Natural size or smaller, never upscaled. (a)-(d) labels baked in. -->
-            <img src="../assets/img/ur5e-autonomous-manipulation/precision-evaluation-motion.png" width="601" height="533" alt="Four photos of the UR5e arm and gripper approaching a white foam cube: (a) above the cube, (b) touching the top surface, (c) mid-transition, (d) at an adjacent side face.">
+            <picture><source srcset="../assets/img/ur5e-autonomous-manipulation/precision-evaluation-motion-opt.webp" type="image/webp"><img src="../assets/img/ur5e-autonomous-manipulation/precision-evaluation-motion.png" width="601" height="533" alt="Four photos of the UR5e arm and gripper approaching a white foam cube: (a) above the cube, (b) touching the top surface, (c) mid-transition, (d) at an adjacent side face."></picture>
           </div>
           <figcaption><span class="fig-label">Fig. 01: Motion of the robot for the precision evaluation task, (a)–(d)</span><span>Real robot</span></figcaption>
         </figure>
@@ -183,14 +186,14 @@
             <img src="https://i.ytimg.com/vi/_Hrgz3AgHD0/hqdefault.jpg" width="480" height="360" loading="lazy" alt="Video thumbnail: UR5e push-and-place task">
             <button class="yt__btn" type="button" aria-label="Play push-and-place video"><span>▶ Play video</span></button>
           </div>
-          <figcaption><span class="fig-label">Push-and-place task</span><a href="https://youtube.com/shorts/_Hrgz3AgHD0" target="_blank" rel="noopener">YouTube ↗</a></figcaption>
+          <figcaption><span class="fig-label">Push-and-place task</span><a href="https://youtube.com/shorts/_Hrgz3AgHD0" target="_blank" rel="noopener" aria-label="Push-and-place task video on YouTube (opens in a new tab)">YouTube ↗</a></figcaption>
         </figure>
         <figure class="cs-fig">
           <div class="yt yt--short" data-yt-id="hiosG6zvh-c" data-yt-title="UR5e precision evaluation task">
             <img src="https://i.ytimg.com/vi/hiosG6zvh-c/hqdefault.jpg" width="480" height="360" loading="lazy" alt="Video thumbnail: UR5e precision evaluation task">
             <button class="yt__btn" type="button" aria-label="Play precision evaluation video"><span>▶ Play video</span></button>
           </div>
-          <figcaption><span class="fig-label">Precision evaluation task</span><a href="https://youtube.com/shorts/hiosG6zvh-c" target="_blank" rel="noopener">YouTube ↗</a></figcaption>
+          <figcaption><span class="fig-label">Precision evaluation task</span><a href="https://youtube.com/shorts/hiosG6zvh-c" target="_blank" rel="noopener" aria-label="Precision evaluation task video on YouTube (opens in a new tab)">YouTube ↗</a></figcaption>
         </figure>
       </div>
     </div>
@@ -255,7 +258,7 @@
           <h3>Measured (real robot)</h3>
           <ul>
             <li><strong>IK control was more accurate than RR.</strong> Position errors with IK stayed at the micrometre level, while both RR implementations ended about 5–10 mm from the target at every waypoint.</li>
-            <li>The IK control achieved near-perfect accuracy.</li>
+            <li>Measured IK position error (d_R3) was 1.485×10<sup>−3</sup> to 7.12×10<sup>−3</sup> mm across the six waypoints on the real robot.</li>
             <li>Errors were computed at each waypoint as position (d_R3, mm) and orientation (d_SO3, rad) error between the desired and actual poses.</li>
           </ul>
           <h3>Precision task</h3>

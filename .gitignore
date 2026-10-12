@@ -4,3 +4,9 @@ docs/reports/clarifeye_contract_book.pdf
 docs/reports/adaptable_pedal_box_Final_Report.docx
 docs/reports/ur5e_push_place_report.pdf
 PortfolioFeb26.pdf
+# Office lock/temp files
+~$*
+# Raw source videos (the site uses compressed copies in assets/video/)
+videos/Autonomous Writing Device/Autonomous_writing_device_demo.mp4
+videos/Clarifeye/App_demo.mp4
+videos/LeRobot_SO_101_arm/LeRobot_SO_101_arm_calibration.mp4

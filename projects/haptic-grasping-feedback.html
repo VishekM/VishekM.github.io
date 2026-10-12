@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grasping Force Feedback for da Vinci Surgical Robots | Vishek Masalia</title>
-  <meta name="description" content="Case study: a 3D-printed, 1:1.2 scale da Vinci-style leader-hand gripper with a capstan drive and Hapkit 3.0 control that renders free-space, soft-tissue and hard-tissue grasping forces. JHU EN.530.691.">
+  <meta name="description" content="Case study: a 3D-printed, 1:1.2 da Vinci-style gripper with a capstan drive and Hapkit 3.0 that renders free-space, soft and hard-tissue forces. JHU EN.530.691.">
   <link rel="canonical" href="https://vishekm.github.io/projects/haptic-grasping-feedback.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Grasping Force Feedback for da Vinci Surgical Robots | Vishek Masalia">
@@ -12,6 +12,9 @@
   <meta property="og:url" content="https://vishekm.github.io/projects/haptic-grasping-feedback.html">
   <meta property="og:image" content="https://vishekm.github.io/assets/img/haptic-grasping-feedback/system-workflow-diagram.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -143,7 +146,7 @@
         </div>
         <figure class="cs-fig">
           <!-- LOW-RES SOURCE: 676x435 px; labels baked in. Natural size, never upscaled. -->
-          <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/prototype-front-annotated.png" width="676" height="435" loading="lazy" alt="Front view of the prototype on a breadboard, labelled: DC motor, Hapkit board, linear capstan, force sensor, motor/gripper mount, gripper, touch sensor and button for changing states."></div>
+          <div class="cs-fig__frame"><picture><source srcset="../assets/img/haptic-grasping-feedback/prototype-front-annotated-opt.webp" type="image/webp"><img src="../assets/img/haptic-grasping-feedback/prototype-front-annotated.png" width="676" height="435" loading="lazy" alt="Front view of the prototype on a breadboard, labelled: DC motor, Hapkit board, linear capstan, force sensor, motor/gripper mount, gripper, touch sensor and button for changing states."></picture></div>
           <figcaption><span class="fig-label">Fig. 03: Prototype, front view</span><span>Apparatus doc Fig. 1</span></figcaption>
         </figure>
       </div>
@@ -172,7 +175,7 @@
     <div class="container">
       <div class="cs-section__head"><div><p class="eyebrow">System</p><h2 id="system-title">System architecture</h2></div><span class="section__index">04</span></div>
       <figure class="cs-fig">
-        <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/system-workflow-diagram.png" width="1294" height="735" loading="lazy" alt="Block diagram: the MR sensor, force sensor, touch sensor and button feed the board; the board sends a PWM signal to the motor and connects over USB to the user interface. An inset photo shows the red prototype."></div>
+        <div class="cs-fig__frame"><picture><source srcset="../assets/img/haptic-grasping-feedback/system-workflow-diagram-opt.webp" type="image/webp"><img src="../assets/img/haptic-grasping-feedback/system-workflow-diagram.png" width="1294" height="735" loading="lazy" alt="Block diagram: the MR sensor, force sensor, touch sensor and button feed the board; the board sends a PWM signal to the motor and connects over USB to the user interface. An inset photo shows the red prototype."></picture></div>
         <figcaption><span class="fig-label">Fig. 05: (a) Workflow of the grasping force feedback mechanism; (b) prototype</span><span>Report Fig. 1 · board drawn with an Arduino UNO icon; the Hapkit 3.0 is a modified Arduino Uno</span></figcaption>
       </figure>
       <div class="cs-split" style="margin-top: var(--sp-6);">
