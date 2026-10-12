@@ -469,3 +469,27 @@ a:hover { color: var(--c-accent); }
   .credits li, .links-list li { grid-template-columns: 1fr; gap: 2px; }
   .eq { font-size: 1rem; padding: var(--sp-3); }
 }
+
+/* 19b. Case-study additions (UR5e page; reusable) */
+.cs-steps { padding-left: 1.4em; display: grid; gap: var(--sp-3); margin: 0 0 var(--sp-4); color: var(--c-ink-2); }
+.cs-steps li::marker { font-family: var(--font-mono); color: var(--c-accent); }
+.cs-steps .eq { margin: var(--sp-2) 0; }
+.cs-prose code { font-family: var(--font-mono); font-size: 0.9em; background: var(--c-plate); padding: 1px 5px; border-radius: var(--radius); color: var(--c-ink); }
+.cs-prose math { font-size: 1.05em; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll .data-table { min-width: 720px; }
+.data-table thead th[scope="colgroup"] { text-align: center; border-left: 1px solid var(--c-rule); color: var(--c-ink-2); }
+.table-note { font-size: var(--fs-sm); color: var(--c-ink-2); max-width: 90ch; margin: var(--sp-3) 0 0; }
+.cs-split--even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.cs-fig figcaption a { font-family: var(--font-mono); text-decoration: none; color: var(--c-ink-2); }
+.cs-fig figcaption a:hover { color: var(--c-accent); }
+@media (max-width: 960px) { .cs-split--even { grid-template-columns: 1fr; } }
+
+/* Portrait YouTube videos side by side */
+.cs-shorts { display: flex; flex-wrap: wrap; gap: var(--sp-6); }
+.cs-shorts .cs-fig { width: 300px; max-width: 100%; }
+.cs-shorts .yt--short { max-width: none; width: 100%; }
+/* YouTube's hqdefault thumbnail letterboxes portrait videos (4:3 frame, 16:9 area inside).
+   Scale the poster so only the video area shows; the iframe itself is unaffected. */
+.yt--short { overflow: hidden; }
+.yt--short > img { transform: scale(1.34); }

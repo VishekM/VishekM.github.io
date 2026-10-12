@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UR5e Autonomous Push-and-Place Manipulation | Vishek Masalia</title>
+  <meta name="description" content="Case study: inverse-kinematics vs resolved-rate Cartesian control on a real UR5e arm in ROS 2 and MATLAB RTDE, with a 16 cm autonomous push-and-place task and a near-contact precision task. JHU EN.530.646.">
+  <link rel="canonical" href="https://vishekm.github.io/projects/ur5e-autonomous-manipulation.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="UR5e Autonomous Push-and-Place Manipulation | Vishek Masalia">
+  <meta property="og:description" content="Inverse-kinematics vs resolved-rate Cartesian control on a real UR5e arm, in ROS 2 and MATLAB RTDE.">
+  <meta property="og:url" content="https://vishekm.github.io/projects/ur5e-autonomous-manipulation.html">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/ur5e-autonomous-manipulation/precision-evaluation-motion.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="../index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="../index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html#projects">Projects</a> / Project 02</p>
+      <div class="cs-hero__grid">
+        <div>
+          <div class="project-card__label">
+            <span class="project-card__num">PROJECT 02</span>
+            <span class="label">JHU · EN.530.646 · Nov 2025 – Dec 2025</span>
+          </div>
+          <h1 class="cs-hero__title" id="cs-title">UR5e Autonomous Push-and-Place Manipulation</h1>
+          <p class="cs-hero__summary">A UR5e arm, taught a start pose in freedrive mode, autonomously pushes a foam cube about 16 cm along a straight line and back, comparing inverse-kinematics and resolved-rate Cartesian control on the real robot through ROS 2 and MATLAB RTDE.</p>
+          <div class="cs-hero__actions">
+            <a class="btn btn--primary" href="#demo">Watch the videos <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="#results">See the results <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="spec" aria-label="Project summary">
+            <div class="spec__head"><span class="label">Project spec</span><span class="label">Completed</span></div>
+            <dl class="spec__rows">
+              <div class="spec__row"><dt>Course</dt><dd>Robot Devices, Kinematics, Dynamic and Control (EN.530.646), Johns Hopkins University</dd></div>
+              <div class="spec__row"><dt>Role</dt><dd>Robotics Control Engineer. With Pattharaphol Chainiwattana: the controls, ROS 2 and MATLAB RTDE implementation, hardware execution, and the precision-evaluation (near-contact) task. Designed the IK solution filter and rechecked the simulation.</dd></div>
+              <div class="spec__row"><dt>Team</dt><dd>2-person core team</dd></div>
+              <div class="spec__row"><dt>Platform</dt><dd>UR5e · ROS 2 · RViz · MATLAB RTDE · MATLAB</dd></div>
+            </dl>
+          </aside>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame">
+            <!-- SOURCE 601x533 px (images/ur5e_push_place/Motion_of_UR5e_for_precision_evaluation_task.png). Natural size or smaller, never upscaled. (a)-(d) labels baked in. -->
+            <img src="../assets/img/ur5e-autonomous-manipulation/precision-evaluation-motion.png" width="601" height="533" alt="Four photos of the UR5e arm and gripper approaching a white foam cube: (a) above the cube, (b) touching the top surface, (c) mid-transition, (d) at an adjacent side face.">
+          </div>
+          <figcaption><span class="fig-label">Fig. 01: Motion of the robot for the precision evaluation task, (a)–(d)</span><span>Real robot</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="cs-section" id="overview" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Overview</p><h2 id="overview-title">At a glance</h2></div><span class="section__index">01</span></div>
+      <div class="stats">
+        <div class="stat"><span class="stat__value">16 <small>cm</small></span><span class="stat__label">Straight-line push, then an automatic return push</span></div>
+        <div class="stat"><span class="stat__value">≤ 8</span><span class="stat__label">IK solutions per pose, filtered to one</span></div>
+        <div class="stat"><span class="stat__value">1.485×10<sup>−3</sup> – 7.12×10<sup>−3</sup> <small>mm</small></span><span class="stat__label">IK position error (d_R3) across the 6 waypoints, ROS</span></div>
+        <div class="stat"><span class="stat__value">5.259 – 10.000 <small>mm</small></span><span class="stat__label">RR position error (d_R3), ROS and RTDE</span></div>
+      </div>
+      <p class="cs-quote">The task requires the UR5e robot to push a foam cube approximately 16 cm along a straight line from a taught start pose ... and then automatically execute a return push without manually specifying a second target.</p>
+    </div>
+  </section>
+
+  <!-- ============ OBJECTIVE ============ -->
+  <section class="cs-section" id="objective" aria-labelledby="objective-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Objective</p><h2 id="objective-title">The task</h2></div><span class="section__index">02</span></div>
+      <div class="cs-prose">
+        <p><strong>Objectives:</strong> achieve accurate world-frame Cartesian motion, evaluate different Cartesian control strategies, and ensure safe and robust execution on a real robotic system.</p>
+        <ul>
+          <li><strong>Autonomous push-and-place task:</strong> push the cube along a straight line, then execute the return push automatically.</li>
+          <li><strong>Precision evaluation task:</strong> assess near-contact motion by approaching multiple surfaces of a foam cube without visible deformation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section class="cs-section" id="approach" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Approach</p><h2 id="approach-title">How it was built</h2></div><span class="section__index">03</span></div>
+
+      <!-- TODO (not exported, per content file the report figures are source-only): report Fig. 2 (foam cube on whiteboard)
+           and Fig. 3 (picking gripper) photos would fit beside this subsection if exported to images/ur5e_push_place/. -->
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Controls and robotics</h3>
+          <p class="cs-owner">Vishek with Pattharaphol Chainiwattana · IK solution filter designed by Vishek</p>
+          <ul>
+            <li>Implemented and compared inverse-kinematics (IK) based and resolved-rate (RR) Cartesian control.</li>
+            <li>Robot motion is planned in SE(3) with a fixed world-frame pushing direction, and safety constraints such as joint limits and collision avoidance are enforced.</li>
+            <li>The initial pose is taught in freedrive mode.</li>
+            <li>IK uses the course-provided analytical IK solver, which returns up to eight joint-space solutions; Vishek designed the filter that selects among them (see <a href="#implementation">Implementation</a>).</li>
+            <li>RR control uses the approach developed in the course's Lab 3.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Software</h3>
+          <ul>
+            <li><strong>ROS 2:</strong> IK and RR control, in simulation and on hardware.</li>
+            <li><strong>MATLAB RTDE:</strong> RR control with direct execution on the robot.</li>
+            <li>All project code was written in MATLAB, as scripts and functions for the RR controller, forward and inverse kinematics, and error reporting, run against the robot over ROS 2 or RTDE.</li>
+          </ul>
+          <h3>Testing</h3>
+          <ul>
+            <li>RViz simulation (rechecked by Vishek) verified forward kinematics, inverse kinematics and the RR controller in a risk-free environment before running on the UR5e.</li>
+            <li>Position (d_R3) and orientation (d_SO3) errors were computed at each waypoint on the real robot.</li>
+            <li>After each IK motion, the actual joint angles are read back from the robot and compared against the commanded values.</li>
+            <li>Precision evaluation on the real robot: near-contact poses on the cube's top and an adjacent side, using IK control.</li>
+          </ul>
+          <!-- TODO (not exported): report Fig. 5, RViz simulation snapshots (taught position / push forward complete / push back complete). -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SYSTEM / DESIGN ============ -->
+  <section class="cs-section" id="system" aria-labelledby="system-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">System</p><h2 id="system-title">Setup and trajectory</h2></div><span class="section__index">04</span></div>
+      <!-- TODO (not exported): report Fig. 1 task schematic, Fig. 4 RViz frames diagram. -->
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Hardware</h3>
+          <ul>
+            <li>UR5e manipulator on a whiteboard surface, with a foam cube as the object.</li>
+            <li>A picking gripper mounted at the tool flange serves as the pushing end-effector.</li>
+          </ul>
+          <h3>Planned trajectory</h3>
+          <p>The figure shows the robot's planned trajectory: from the taught start pose, a straight-line push of the cube, a lift, a move to the far side of the cube, and a return push back toward the start.</p>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 427x293 px. Natural size, never upscaled. TODO: higher-res redraw of this schematic. -->
+          <div class="cs-fig__frame"><img src="../assets/img/ur5e-autonomous-manipulation/push-place-motion-schematic.png" width="427" height="293" loading="lazy" alt="Line drawing of the planned push-and-place trajectory: the gripper and cube at the taught pose, a home pose, and numbered poses 1 to 6 for the push, lift, traverse, lowering and return push."></div>
+          <figcaption><span class="fig-label">Fig. 02: Motion of the robot for the push-and-place task</span><span>Distances in the drawing are approximate</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEOS (YouTube only; the course report is not public) ============ -->
+  <section class="cs-section" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Videos</p><h2 id="demo-title">See it working</h2></div><span class="section__index">05</span></div>
+      <div class="cs-shorts">
+        <figure class="cs-fig">
+          <!-- YouTube click-to-load facade (js/main.js). Both videos are portrait: 9:16 container (.yt--short). -->
+          <div class="yt yt--short" data-yt-id="1OqDDN3ouT4" data-yt-title="UR5e push-and-place task">
+            <img src="https://i.ytimg.com/vi/1OqDDN3ouT4/hqdefault.jpg" width="480" height="360" loading="lazy" alt="Video thumbnail: UR5e push-and-place task">
+            <button class="yt__btn" type="button" aria-label="Play push-and-place video"><span>▶ Play video</span></button>
+          </div>
+          <figcaption><span class="fig-label">Push-and-place task</span><a href="https://www.youtube.com/watch?v=1OqDDN3ouT4" target="_blank" rel="noopener">YouTube ↗</a></figcaption>
+        </figure>
+        <figure class="cs-fig">
+          <div class="yt yt--short" data-yt-id="lTvJYE0DcE0" data-yt-title="UR5e precision evaluation task">
+            <img src="https://i.ytimg.com/vi/lTvJYE0DcE0/hqdefault.jpg" width="480" height="360" loading="lazy" alt="Video thumbnail: UR5e precision evaluation task">
+            <button class="yt__btn" type="button" aria-label="Play precision evaluation video"><span>▶ Play video</span></button>
+          </div>
+          <figcaption><span class="fig-label">Precision evaluation task</span><a href="https://www.youtube.com/watch?v=lTvJYE0DcE0" target="_blank" rel="noopener">YouTube ↗</a></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPLEMENTATION ============ -->
+  <section class="cs-section" id="implementation" aria-labelledby="implementation-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Implementation</p><h2 id="implementation-title">Control laws</h2></div><span class="section__index">06</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Resolved-rate update law</h3>
+          <div class="eq" role="group" aria-label="Resolved-rate update law">
+            <math display="block" aria-label="q sub i plus 1 equals q sub i minus delta t times K times the inverse of the body Jacobian J sub st superscript b of q sub i, times xi sub i">
+              <mrow>
+                <msub><mi>q</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>q</mi><mi>i</mi></msub><mo>−</mo>
+                <mi>Δ</mi><mi>t</mi><mo>&#8290;</mo><mi>K</mi><mo>&#8290;</mo>
+                <msup><mrow><mo>(</mo><msubsup><mi>J</mi><mrow><mi>s</mi><mi>t</mi></mrow><mi>b</mi></msubsup><mo>(</mo><msub><mi>q</mi><mi>i</mi></msub><mo>)</mo><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup>
+                <mo>&#8290;</mo><msub><mi>ξ</mi><mi>i</mi></msub>
+              </mrow>
+            </math>
+            <span class="eq__num">Δt = 0.01 s · K = 1.5</span>
+          </div>
+          <ul>
+            <li>The actual pause between control updates was 0.05 s in ROS and 0.1 s in RTDE, indicating a higher communication and execution latency in RTDE.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>IK solution selection <span class="cs-owner" style="margin:0;">· designed by Vishek</span></h3>
+          <ol class="cs-steps">
+            <li>
+              For a desired pose <math><msub><mi>g</mi><mi>d</mi></msub><mo>∈</mo><mi>SE</mi><mo>(</mo><mn>3</mn><mo>)</mo></math>, compute all IK solutions
+              <div class="eq"><math display="block"><mrow><mi>Q</mi><mo>=</mo><mo>{</mo><msub><mi>q</mi><mn>1</mn></msub><mo>,</mo><msub><mi>q</mi><mn>2</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>q</mi><mi>n</mi></msub><mo>}</mo><mo>,</mo><mspace width="0.6em"/><mi>n</mi><mo>≤</mo><mn>8</mn></mrow></math><span class="eq__num">Step 1</span></div>
+            </li>
+            <li>
+              <strong>Pure translation:</strong> keep a candidate only if it lies within a bounded neighbourhood of the previous configuration
+              <div class="eq"><math display="block"><mrow><msub><mi>q</mi><mtext>prev</mtext></msub><mo>−</mo><mi>Δ</mi><mi>q</mi><mo>≤</mo><msub><mi>q</mi><mi>i</mi></msub><mo>≤</mo><msub><mi>q</mi><mtext>prev</mtext></msub><mo>+</mo><mi>Δ</mi><mi>q</mi><mo>,</mo><mspace width="0.6em"/><mi>Δ</mi><mi>q</mi><mo>=</mo><mi>π</mi><mo>/</mo><mn>4</mn><mtext>&#160;rad</mtext></mrow></math><span class="eq__num">Step 2</span></div>
+              The threshold assumes the robot translates less than 30 cm from the previous position. The remaining solution is used: <math><msub><mi>q</mi><mtext>best</mtext></msub><mo>=</mo><msub><mi>q</mi><mtext>filter</mtext></msub></math>.
+            </li>
+            <li>
+              <strong>Rotation plus translation</strong> (precision task): choose the candidate that minimizes the 2-norm of the joint change
+              <div class="eq"><math display="block"><mrow><msub><mi>q</mi><mtext>best</mtext></msub><mo>=</mo><mo>min</mo><mo>‖</mo><msub><mi>q</mi><mtext>prev</mtext></msub><mo>−</mo><msub><mi>q</mi><mi>i</mi></msub><msub><mo>‖</mo><mn>2</mn></msub></mrow></math><span class="eq__num">Step 3</span></div>
+            </li>
+          </ol>
+          <p>Each joint configuration is commanded with a fixed segment duration of t<sub>seg</sub> = 20 s.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS (Table 1 values from content file lines 71-80; table removed per Vishek 2026-10-12) ============ -->
+  <section class="cs-section" id="results" aria-labelledby="results-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Results</p><h2 id="results-title">Measured accuracy: IK vs RR</h2></div><span class="section__index">07</span></div>
+      <div class="stats">
+        <div class="stat"><span class="stat__value">1.485×10<sup>−3</sup> – 7.12×10<sup>−3</sup> <small>mm</small></span><span class="stat__label">IK position error (ROS), across the 6 waypoints</span></div>
+        <div class="stat"><span class="stat__value">5.259 – 10.000 <small>mm</small></span><span class="stat__label">RR position error (ROS and MATLAB RTDE)</span></div>
+        <div class="stat"><span class="stat__value">≤ 8.87×10<sup>−5</sup> <small>rad</small></span><span class="stat__label">IK orientation error (ROS)</span></div>
+      </div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Measured (real robot)</h3>
+          <ul>
+            <li><strong>IK control was more accurate than RR.</strong> Position errors with IK stayed at the micrometre level, while both RR implementations ended about 5–10 mm from the target at every waypoint.</li>
+            <li>The IK control achieved near-perfect accuracy.</li>
+            <li>Errors were computed at each waypoint as position (d_R3, mm) and orientation (d_SO3, rad) error between the desired and actual poses.</li>
+          </ul>
+          <h3>Precision task</h3>
+          <ul>
+            <li>From about 10 cm above, the robot returned to a taught top-surface pose, achieving near-contact with the cube surface without visibly compressing it, then approached an adjacent side. The robot successfully executed all stages of this task.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Observed (not measured)</h3>
+          <ul>
+            <li><strong>Smoothness:</strong> IK control produced noticeably smoother joint motion; RR exhibited mild but visible jerking during transitions.</li>
+            <li><strong>Speed:</strong> IK reached target poses faster and maintained a consistent velocity profile; RR slowed down significantly as the end effector approached each target.</li>
+            <li><strong>ROS vs RTDE:</strong> ROS proved more reliable and responsive, with lower communication latency and faster debugging cycles. The latency difference is inferred from the required pause durations (0.05 s vs 0.1 s), not measured directly.</li>
+            <li>Accurate straight-line Cartesian pushing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHALLENGES ============ -->
+  <section class="cs-section" id="challenges" aria-labelledby="challenges-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Engineering challenges</p><h2 id="challenges-title">Challenges and limitations</h2></div><span class="section__index">08</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <ul>
+            <li><strong>Multiple IK solutions:</strong> the solver returns up to eight solutions, and not all are suitable for safe or smooth execution. This motivated the proximity filter.</li>
+            <li><strong>RR gain tuning:</strong> higher gains led to rough and jerky motion, while lower gains improved smoothness but reduced responsiveness. A gain of 1.5, combined with manual adjustment of the time step, gave acceptable performance without convergence failures.</li>
+            <li><strong>RR convergence:</strong> deliberately low linear and angular velocity thresholds improved precision near the goal but slowed convergence.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <ul>
+            <li><strong>RTDE delays:</strong> since the ROS and RTDE control logic was otherwise identical, diagnosing the delays was initially challenging. The cause was traced to timing and synchronization constraints inherent in RTDE communication, which required conservative timing. RTDE was still effective for rapid prototyping, through direct execution and quick visual checks.</li>
+            <li><strong>Limitation:</strong> RR relied on manually tuned pause durations and step times, which made large motions jerky and small near-target motions excessively slow.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box">
+        <span class="label">Proposed · not implemented</span>
+        <ul>
+          <li>Adaptive step sizing, velocity scaling, time-optimal trajectory generation, and automatic pause durations based on joint velocity limits or distance to goal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAKEAWAYS ============ -->
+  <section class="cs-section" id="takeaways" aria-labelledby="takeaways-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Takeaways</p><h2 id="takeaways-title">What it showed</h2></div><span class="section__index">09</span></div>
+      <div class="cs-prose">
+        <p class="cs-quote">IK-based control was easier to deploy and yielded smoother and faster motion with minimal tuning, whereas RR control offered fine-grained control over motion behavior at the cost of increased parameter sensitivity and tuning effort.</p>
+        <ul>
+          <li>For final system development, ROS offered superior scalability, debuggability, and reliability due to its integrated simulation, visualization, and communication infrastructure.</li>
+          <li>Careful control strategy selection, environment choice, and tuning are critical for safe and efficient real-world robotic manipulation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CREDITS ============ -->
+  <section class="cs-section" id="credits" aria-labelledby="credits-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Team</p><h2 id="credits-title">Credits</h2></div><span class="section__index">10</span></div>
+      <ul class="credits">
+        <li><span>Vishek Masalia</span><span>Robotics Control Engineer. Controls, ROS 2 and MATLAB RTDE implementation, hardware execution, and the precision-evaluation (near-contact) task, with Pattharaphol Chainiwattana. Designed the IK solution filter and rechecked the simulation.</span></li>
+        <li><span>Pattharaphol Chainiwattana</span><span>Controls, ROS 2 and MATLAB RTDE implementation, hardware execution, and the precision-evaluation (near-contact) task, with Vishek Masalia.</span></li>
+      </ul>
+      <p class="cs-owner" style="margin-top: var(--sp-4);">Course project. The analytical IK solver and the Lab 3 resolved-rate approach were provided by the course; the IK solution-selection filter is Vishek's work.</p>
+      <div class="cs-nextprev" style="margin-top: var(--sp-6);">
+        <a class="link-arrow" href="haptic-grasping-feedback.html"><span aria-hidden="true">←</span> Project 01: Grasping Force Feedback</a>
+        <a class="link-arrow" href="../index.html#projects">All projects <span aria-hidden="true">→</span></a>
+        <!-- TODO (Stage 3+): next-project link once projects/clarifeye.html exists -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
