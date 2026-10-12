@@ -363,3 +363,23 @@ a:hover { color: var(--c-accent); }
   .wip-card--media { grid-template-columns: 1fr; }
   .wip-card__video { max-width: 260px; }
 }
+
+/* ---------- 18. Competition robotics (visually secondary) ---------- */
+.section--quiet-list .section__head { margin-bottom: var(--sp-5); }
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--c-rule-strong); border-left: 1px solid var(--c-rule-strong); }
+.comp { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--sp-4); padding: var(--sp-4); border-right: 1px solid var(--c-rule-strong); border-bottom: 1px solid var(--c-rule-strong); background: var(--c-surface); align-items: start; }
+.comp__media { margin: 0; }
+.comp__media img { width: 160px; height: 120px; object-fit: cover; border: 1px solid var(--c-rule); background: var(--c-plate); }
+.comp__body { display: grid; gap: 2px; }
+.comp__meta { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+.comp__title { font-size: var(--fs-base); margin-top: 2px; }
+.comp__result { font-size: var(--fs-sm); font-weight: 600; color: var(--c-accent); margin: 0; }
+.comp__text { font-size: var(--fs-sm); color: var(--c-ink-2); margin: var(--sp-1) 0 0; line-height: 1.5; }
+.comp__links { display: grid; gap: var(--sp-1); justify-items: start; margin-top: var(--sp-2); }
+.comp__links .comp__link { margin-top: 0; }
+.comp__link { font-family: var(--font-mono); font-size: var(--fs-xs); margin-top: var(--sp-2); justify-self: start; }
+@media (max-width: 760px) {
+  .comp-grid { grid-template-columns: 1fr; }
+  .comp { grid-template-columns: 112px minmax(0, 1fr); }
+  .comp__media img { width: 112px; height: 84px; }
+}
