@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeRobot SO-101 Robot Learning | Vishek Masalia</title>
+  <meta name="description" content="In-progress JHU course project (EN.601.698): leader-follower LeRobot SO-101 arms for robot learning. Both arms are assembled and calibrated, and teleoperation works.">
+  <link rel="canonical" href="https://vishekm.github.io/projects/lerobot-so101.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LeRobot SO-101 Robot Learning | Vishek Masalia">
+  <meta property="og:description" content="In progress: leader-follower SO-101 arms for robot learning.">
+  <meta property="og:url" content="https://vishekm.github.io/projects/lerobot-so101.html">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/home/lerobot-follower-arm-assembled.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="../index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="../index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html#current">Currently in progress</a> / LeRobot SO-101</p>
+      <div class="cs-hero__grid">
+        <div>
+          <div class="current__meta"><span class="status">In progress</span><span class="label">JHU · EN.601.698 · Fall 2026 · Last updated 6 Oct 2026</span></div>
+          <h1 class="cs-hero__title" id="cs-title">LeRobot SO-101 Robot Learning</h1>
+          <p class="cs-hero__summary">A course project using the low-cost, open-source LeRobot SO-101 arm in a leader-follower setup for robot learning. So far, both arms are assembled and calibrated, and teleoperation works.</p>
+          <aside class="spec" aria-label="Project summary">
+            <div class="spec__head"><span class="label">Project spec</span><span class="label">In progress</span></div>
+            <dl class="spec__rows">
+              <div class="spec__row"><dt>Course</dt><dd>EN.601.698 Hands-on Robot Learning, Johns Hopkins University</dd></div>
+              <div class="spec__row"><dt>Role</dt><dd>All-rounder across hardware and software. Done so far: shared assembly of both arms, and calibration of the arms.</dd></div>
+              <div class="spec__row"><dt>Team</dt><dd>3</dd></div>
+              <div class="spec__row"><dt>Platform</dt><dd>LeRobot · SO-101 leader and follower arms · servo motors</dd></div>
+            </dl>
+          </aside>
+        </div>
+        <figure class="cs-fig">
+          <!-- SOURCE 960x1280 px (assets/img/home/lerobot-follower-arm-assembled.jpg); shown at up to 560 px tall. Background faces already pixelated. -->
+          <div class="cs-fig__frame"><img src="../assets/img/home/lerobot-follower-arm-assembled.jpg" width="960" height="1280" style="max-height:560px;width:auto;" alt="The assembled white SO-101 follower arm, folded, on a classroom table, with the dark leader arm behind it."></div>
+          <figcaption><span class="fig-label">Fig. 01: Follower arm, assembled</span><span>White = follower · dark = leader</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="cs-section" id="overview" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Overview</p><h2 id="overview-title">The setup</h2></div><span class="section__index">01</span></div>
+      <div class="cs-prose">
+        <p>The LeRobot SO-101 is a low-cost, open-source robotic arm platform used to explore robot learning through real-world data collection, teleoperation, and learned policies.</p>
+        <p>The project uses a leader-follower setup: the leader arm (dark) is moved by a human for demonstration, and the follower arm (white) reproduces the demonstrated motions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DONE SO FAR ============ -->
+  <section class="cs-section" id="done" aria-labelledby="done-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Done so far · team</p><h2 id="done-title">What exists so far</h2></div><span class="section__index">02</span></div>
+      <div class="cs-shorts">
+        <div class="cs-prose" style="flex: 1 1 380px;">
+          <ul>
+            <li>Built both the leader and follower arms. Assembly was shared by the team.</li>
+            <li>Calibrated the arm joints and completed the initial hardware setup.</li>
+            <li>Got leader-follower teleoperation working, and used it to verify the calibration (video).</li>
+          </ul>
+          <p class="cs-owner">Workflow: calibrate the arms first, then run teleoperation to verify the calibration.</p>
+        </div>
+        <figure class="cs-fig" style="width: 300px;">
+          <!-- VIDEO: web copy assets/video/lerobot-teleop.mp4, 540x960, 8.2 s, 0.83 MB (source videos/LeRobot_SO_101_arm/LeRobot_SO_101_arm_calibration.mp4, 1080x1920, 20.8 MB, untouched).
+               Autoplay, muted, looped; js/main.js shows controls instead for prefers-reduced-motion. -->
+          <video autoplay muted loop playsinline preload="metadata" width="540" height="960" poster="../assets/img/home/lerobot-teleop-poster.jpg" style="width:100%;height:auto;border:1px solid var(--c-rule);background:#000;" aria-label="Leader-follower teleoperation: a hand moves the dark leader arm and the white follower arm copies it.">
+            <source src="../assets/video/lerobot-teleop.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="fig-label">Fig. 02: Leader-follower teleoperation</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLANNED (not done) ============ -->
+  <section class="cs-section" id="planned" aria-labelledby="planned-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Planned · not done yet</p><h2 id="planned-title">Next steps</h2></div><span class="section__index">03</span></div>
+      <div class="note-box" style="margin-top:0;">
+        <span class="label">Planned</span>
+        <ul>
+          <li>Add camera-based object detection and perception.</li>
+          <li>Collect demonstrations and train the follower to pick up objects.</li>
+          <li>Deploy learned policies on the physical arm.</li>
+          <li>Explore Vision-Language-Action (VLA) approaches, if feasible within the course timeline.</li>
+        </ul>
+      </div>
+      <p class="cs-owner" style="margin-top: var(--sp-4);">Planned role: developing the software pipeline for deploying learned policies as the project progresses.</p>
+    </div>
+  </section>
+
+  <!-- ============ LINKS / TEAM ============ -->
+  <section class="cs-section" id="credits" aria-labelledby="credits-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Team</p><h2 id="credits-title">Team</h2></div><span class="section__index">04</span></div>
+      <p class="cs-prose">3-person course team: Vishek Masalia, Saloni Bagri and Zou Bangyu.</p>
+      <!-- No external links exist for this project (content file line 55). Per-person credits beyond the above are deferred (line 6). -->
+      <div class="cs-nextprev" style="margin-top: var(--sp-5);">
+        <a class="link-arrow" href="../index.html#current"><span aria-hidden="true">←</span> Back to homepage</a>
+        <a class="link-arrow" href="aplc.html">APLC (concept) <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>

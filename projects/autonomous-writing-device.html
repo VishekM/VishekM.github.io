@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomous Writing Device | Vishek Masalia</title>
+  <meta name="description" content="A handmade 2-axis writing device built from MDF, 3D-printed parts and a rack-and-pinion mechanism, controlled by an Arduino UNO in C++. UIC ME 250 first-year group project.">
+  <link rel="canonical" href="https://vishekm.github.io/projects/autonomous-writing-device.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Autonomous Writing Device | Vishek Masalia">
+  <meta property="og:description" content="A handmade 2-axis writing device: MDF, 3D-printed rack-and-pinion, Arduino UNO.">
+  <meta property="og:url" content="https://vishekm.github.io/projects/autonomous-writing-device.html">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/autonomous-writing-device/writing-device-built.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="../index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="../index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html#projects">Projects</a> / Project 05</p>
+      <div class="cs-hero__grid">
+        <div>
+          <div class="project-card__label">
+            <span class="project-card__num">PROJECT 05</span>
+            <span class="label">UIC · ME 250 · Aug 2021 – Dec 2021</span>
+          </div>
+          <h1 class="cs-hero__title" id="cs-title">Autonomous Writing Device</h1>
+          <p class="cs-hero__summary">A handmade automated writing device built from MDF, 3D-printed parts and a rack-and-pinion mechanism, controlled by an Arduino UNO programmed in C++, which draws shapes and letters.</p>
+          <div class="cs-hero__actions">
+            <a class="btn btn--primary" href="#demo">Watch it draw <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="spec" aria-label="Project summary">
+            <div class="spec__head"><span class="label">Project spec</span><span class="label">Completed</span></div>
+            <dl class="spec__rows">
+              <div class="spec__row"><dt>Course</dt><dd>ME 250 Introduction to Engineering Design and Graphics, University of Illinois Chicago. First-year group project.</dd></div>
+              <div class="spec__row"><dt>Role</dt><dd>Mechanical &amp; Embedded Systems Developer: created the entire CAD model in SolidWorks, 3D printed the custom parts, and cut and drilled all the MDF parts in the class machine shop; programmed the Arduino UNO together with one teammate.</dd></div>
+              <div class="spec__row"><dt>Build</dt><dd>SolidWorks · MDF · 3D-printed parts · rack-and-pinion · Arduino UNO · C++</dd></div>
+            </dl>
+          </aside>
+        </div>
+        <figure class="cs-fig">
+          <!-- SOURCE 1600x1375 px; shown at ~520 px wide. Sharp. -->
+          <div class="cs-fig__frame"><img src="../assets/img/autonomous-writing-device/writing-device-built.jpg" width="1600" height="1375" alt="The built writing device on a workbench: an MDF gantry frame over an MDF base, a pen carriage above lined paper held by binder clips, red and blue rack strips and red 3D-printed corner pieces."></div>
+          <figcaption><span class="fig-label">Fig. 01: The built device</span><span>MDF and 3D-printed parts</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="cs-section" id="overview" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Overview</p><h2 id="overview-title">The idea</h2></div><span class="section__index">01</span></div>
+      <p class="cs-quote">Like a 3D printer without the Z axis: a 2-axis device that moves a pen over paper.</p>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section class="cs-section" id="approach" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Approach</p><h2 id="approach-title">How it was built</h2></div><span class="section__index">02</span></div>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Planning</h3>
+          <ul>
+            <li>Before designing, the team did a black box model, Gantt charts and the other preliminary design steps.</li>
+          </ul>
+          <h3>Mechanical design</h3>
+          <p class="cs-owner">Entire CAD model: Vishek</p>
+          <ul>
+            <li>Designed and refined iterations in SolidWorks.</li>
+            <li>Mechanical structure of MDF and 3D-printed components, with a 3D-printed rack-and-pinion mechanism for actuation.</li>
+            <li>Two axes (X–Y), no Z axis: an MDF gantry-style frame over an MDF base that holds the paper, with a carriage carrying the pen tool.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <!-- SOURCE 1160x734 px; shown at ~520 px wide. Clean. -->
+          <div class="cs-fig__frame"><img src="../assets/img/autonomous-writing-device/writing-device-cad.png" width="1160" height="734" loading="lazy" alt="Wood-textured SolidWorks render of the device: a gantry frame on a box base, a carriage with a motor on top, guide rods and small grey brackets."></div>
+          <figcaption><span class="fig-label">Fig. 02: SolidWorks CAD model</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split" style="margin-top: var(--sp-6);">
+        <div class="cs-prose">
+          <h3>Fabrication</h3>
+          <p class="cs-owner">Vishek</p>
+          <ul>
+            <li>Cut and drilled all the MDF structural parts in the class machine shop.</li>
+            <li>3D printed the custom parts.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Electronics and software</h3>
+          <p class="cs-owner">Vishek and one teammate</p>
+          <ul>
+            <li>Programmed in C++ on an Arduino UNO microcontroller.</li>
+            <li>Separate programs drew different shapes and letters, such as a square.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="cs-section" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Demo</p><h2 id="demo-title">Watch it draw</h2></div><span class="section__index">03</span></div>
+      <figure class="cs-fig" style="max-width: 900px;">
+        <!-- VIDEO: web copy assets/video/writing-device-demo.mp4, 1280x720, 10.7 s, 2.0 MB (source videos/Autonomous Writing Device/Autonomous_writing_device_demo.mp4, 3840x2160, 92 MB, untouched).
+             Autoplay, muted, looped; js/main.js shows controls instead for prefers-reduced-motion. -->
+        <video autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="../assets/img/home/writing-device-demo-poster.jpg" style="width:100%;height:auto;border:1px solid var(--c-rule);background:#000;" aria-label="Demo: the writing device moves its pen carriage over a sheet of paper.">
+          <source src="../assets/video/writing-device-demo.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="fig-label">Fig. 03: Demo run</span><span>Handheld footage</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="cs-section" id="results" aria-labelledby="results-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Results</p><h2 id="results-title">Outcome</h2></div><span class="section__index">04</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <ul>
+            <li>The final device successfully drew shapes and letters with stability, and operated at the push of a button.</li>
+            <li>Each pre-programmed drawing ran when its code was started; the square worked best.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Feedback</h3>
+          <ul>
+            <li>Presented the project to UIC professors, receiving feedback on optimizing the design for reduced mass and cost.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Measured results, challenges and takeaways: NOT IN SOURCES (content file lines 42, 46, 49). -->
+      <div class="cs-nextprev" style="margin-top: var(--sp-7);">
+        <a class="link-arrow" href="adaptable-pedal-box.html"><span aria-hidden="true">←</span> Project 04: Pedal Box</a>
+        <a class="link-arrow" href="../index.html#projects">All projects <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
