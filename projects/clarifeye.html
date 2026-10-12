@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clarifeye: Affordable AI-Based Fundus Imaging | Vishek Masalia</title>
+  <meta name="description" content="Case study: a fully mechanical, 3D-printed smartphone attachment with X–Y alignment and threaded axial focus for a 20D condenser lens. Hardware design lead, JHU EN.520.427.">
+  <link rel="canonical" href="https://vishekm.github.io/projects/clarifeye.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Clarifeye: Affordable AI-Based Fundus Imaging | Vishek Masalia">
+  <meta property="og:description" content="A fully mechanical, 3D-printed smartphone attachment that aligns any phone camera with a 20D condenser lens.">
+  <meta property="og:url" content="https://vishekm.github.io/projects/clarifeye.html">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/clarifeye/exploded-assembly-cad.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="../index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="../index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html#projects">Projects</a> / Project 03</p>
+      <div class="cs-hero__grid">
+        <div>
+          <div class="project-card__label">
+            <span class="project-card__num">PROJECT 03</span>
+            <span class="label">JHU · EN.520.427 · Aug 2025 – Dec 2025</span>
+          </div>
+          <h1 class="cs-hero__title" id="cs-title">Clarifeye: Affordable AI-Based Fundus Imaging</h1>
+          <p class="cs-hero__summary">A fully mechanical, 3D-printed handheld attachment designed to align any smartphone camera with a 20D condenser lens for retinal imaging. It is the hardware half of a course startup concept for AI-assisted eye screening in low- and middle-income countries.</p>
+          <div class="cs-hero__actions">
+            <a class="btn btn--primary" href="#design">See the mechanism <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="#results">Results &amp; limits <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="spec" aria-label="Project summary">
+            <div class="spec__head"><span class="label">Project spec</span><span class="label">Completed</span></div>
+            <dl class="spec__rows">
+              <div class="spec__row"><dt>Course</dt><dd>EN.520.427 Design of Advanced Instruments and Systems, Johns Hopkins University. Teams developed a startup idea over the semester.</dd></div>
+              <div class="spec__row"><dt>Role</dt><dd>Hardware Design Lead: all CAD, 3D printing, prototyping and assembly; patent search with Vaibhav Mahapatra. No part in the software.</dd></div>
+              <div class="spec__row"><dt>Team</dt><dd>4 (credits below)</dd></div>
+              <div class="spec__row"><dt>Hardware</dt><dd>SolidWorks · PLA 3D printing · M4/M6 fasteners · 20D condenser lens · no electronics</dd></div>
+            </dl>
+          </aside>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame">
+            <!-- SOURCE 1003x1280 px, appears AI-upscaled (no original exists, content file line 134). Shown at ~520 px wide; never upscaled. -->
+            <img src="../assets/img/clarifeye/prototype-on-phone.jpg" width="1003" height="1280" style="max-height:620px;width:auto;" alt="Hand holding a smartphone fitted with the 3D-printed prototype: a brown X–Y slider over the camera and a pink lens housing holding the condenser lens, on a commercial phone mount.">
+          </div>
+          <figcaption><span class="fig-label">Fig. 01: Assembled prototype on a phone</span><span>Commercial mount used for prototyping</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="cs-section" id="overview" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Overview</p><h2 id="overview-title">At a glance</h2></div><span class="section__index">01</span></div>
+      <div class="stats">
+        <div class="stat"><span class="stat__value">3</span><span class="stat__label">Mechanical subsystems: phone mount, X–Y slider, lens housing</span></div>
+        <div class="stat"><span class="stat__value">20D</span><span class="stat__label">Condenser lens the housing is designed for</span></div>
+        <div class="stat"><span class="stat__value">&lt; $100</span><span class="stat__label">Hardware cost target (not formally measured; no bill of materials)</span></div>
+        <div class="stat"><span class="stat__value">0</span><span class="stat__label">Electronic components in the prototype: fully mechanical</span></div>
+      </div>
+      <p class="cs-quote">Access to timely screening is severely limited in low- and middle-income countries (LMICs) due to specialist shortages, high costs, and the immobility of conventional imaging devices.</p>
+    </div>
+  </section>
+
+  <!-- ============ OBJECTIVE ============ -->
+  <section class="cs-section" id="objective" aria-labelledby="objective-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Objective</p><h2 id="objective-title">The problem</h2></div><span class="section__index">02</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <p>Preventable blindness remains a major global health challenge, driven by conditions such as diabetic retinopathy, glaucoma, cataracts, and uncorrected refractive errors.</p>
+          <p>Existing smartphone-based fundus imaging tools have demonstrated feasibility but face persistent limitations in image quality, device specificity, and workflow integration.</p>
+        </div>
+        <div class="cs-prose">
+          <h3>Hardware requirements</h3>
+          <p class="cs-owner">From the patent search · Vishek and Vaibhav Mahapatra</p>
+          <ul>
+            <li><strong>Smartphone-agnostic compatibility.</strong></li>
+            <li><strong>Extendable holder:</strong> an adjustable mechanism to control the distance between the camera and the lens, enabling optimal focus.</li>
+            <li><strong>Modular lens housing.</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MECHANICAL DESIGN (Vishek) ============ -->
+  <section class="cs-section" id="design" aria-labelledby="design-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Approach · Mechanical design</p><h2 id="design-title">Three subsystems, one optical axis</h2></div><span class="section__index">03</span></div>
+      <p class="cs-owner">All CAD, 3D printing, prototyping and assembly: Vishek</p>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <p>The hardware is a fully mechanical, smartphone-based fundus photography attachment designed to align a smartphone camera with an external condenser lens. All major structural components are additively manufactured, and no electronic components are included.</p>
+          <p>Three subsystems (the phone mount assembly, the X–Y slider attachment, and the lens housing with its adjustment mechanism) together enable <strong>planar alignment (X–Y) of the smartphone camera and axial adjustment (Z) of the condenser lens while preserving concentric alignment of the optical axis.</strong></p>
+          <ul>
+            <li>Full CAD architecture in SolidWorks, with modular components for easy 3D printing and replacement.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame"><img src="../assets/img/clarifeye/exploded-assembly-cad.png" width="1760" height="1001" loading="lazy" alt="Exploded CAD view of the full assembly with labels: lens housing and axial adjustment mechanism (pink), X–Y slider attachment (brown), phone mount assembly (dark grey, with grip)."></div>
+          <figcaption><span class="fig-label">Fig. 02: Exploded view of the complete assembly</span><span>SolidWorks CAD</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split cs-split--flip">
+        <div class="cs-prose">
+          <h3>I. Phone mount assembly</h3>
+          <ul>
+            <li>Universal phone compatibility, avoiding device-specific designs.</li>
+            <li>A custom ergonomic grip, with rigid locking mechanisms to reduce motion artifacts.</li>
+            <li>A custom longitudinal slider slot. It houses two pairs of M4 square nuts and M4 bolts, which act as sliding fasteners and form a guided linear track for <strong>X</strong> motion.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame"><img src="../assets/img/clarifeye/phone-mount-cad-annotated.png" width="1284" height="1017" loading="lazy" alt="Phone mount CAD labelled: slider slot, ergonomic grip, M4 square nut and bolt, with an X-direction arrow."></div>
+          <figcaption><span class="fig-label">Fig. 03: Phone mount assembly</span><span>X direction</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>II. X–Y slider attachment</h3>
+          <ul>
+            <li>The attachment slides over the M4 bolts, adding <strong>Y</strong> motion. Together with the slot, it can be positioned over any camera location on the phone.</li>
+            <li>A circular cutout serves as a visual alignment guide:
+              <ol class="cs-steps" style="margin-top: var(--sp-2);">
+                <li>Translate in X and Y until the camera lens is concentric with the cutout.</li>
+                <li>Tighten the M4 bolts to lock it.</li>
+              </ol>
+            </li>
+            <li>The cutout and the lens housing are concentrically aligned by construction, eliminating optical axis misalignment once the camera is correctly positioned.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame"><img src="../assets/img/clarifeye/xy-slider-cad-annotated.png" width="1849" height="1435" loading="lazy" alt="X–Y slider attachment CAD labelled: circular cutout and in-use camera, with a Y-direction arrow."></div>
+          <figcaption><span class="fig-label">Fig. 04: X–Y slider attachment</span><span>Y direction</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split cs-split--flip">
+        <div class="cs-prose">
+          <h3>III. Lens housing and axial adjustment</h3>
+          <ul>
+            <li>Designed to house a <strong>20-diopter (20D) condenser lens</strong>, retained by a single M6 nut and bolt.</li>
+            <li>The underside has one central hole for a threaded rod and two lateral holes acting as linear guide rails. Rotating the threaded rod translates the housing axially toward or away from the camera (<strong>Z</strong>).</li>
+            <li>A rear cap, attached with two M4 bolts, secures the threaded rod; a rotational knob gives manual focus adjustment.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame"><img src="../assets/img/clarifeye/lens-housing-cad-annotated.png" width="1104" height="962" loading="lazy" alt="Lens housing CAD labelled: 20D lens, threaded rod, rotational knob and axial adjustment, with a dashed optical axis."></div>
+          <figcaption><span class="fig-label">Fig. 05: Lens housing and axial adjustment mechanism</span><span>Z direction</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split" style="grid-template-columns: 1fr;">
+        <div class="cs-prose">
+          <h3>Materials and manufacturing</h3>
+          <ul>
+            <li>All custom structural parts (phone mount, X–Y slider attachment, lens housing and adjustment knob) are 3D printed in PLA, chosen for low weight, adequate strength, ease of fabrication and replacement, and cost-effectiveness.</li>
+            <li>Standard fasteners (M4 and M6 nuts and bolts) and the condenser lens are commercially sourced.</li>
+            <li>Design advantages: universality across phones, built-in X–Y alignment, axial lens adjustment, lightweight ergonomic construction, and simple, fast assembly with minimal components.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNSTREAM SOFTWARE (teammates; context only) ============ -->
+  <section class="cs-section" id="software" aria-labelledby="software-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Context · Teammates' work</p><h2 id="software-title">Downstream software the hardware supports</h2></div><span class="section__index">04</span></div>
+      <div class="cs-split cs-split--narrow-fig">
+        <div class="cs-prose">
+          <p>The attachment is designed to capture images for a downstream software pipeline (image enhancement, stitching, GAN-based restoration and classification) developed by teammates. Vishek had no part in the software, and no performance of this pipeline was measured.</p>
+          <ul>
+            <li>App (front end): Mrishika Nair.</li>
+            <li>AI and backend: Niranjani Komethagavel and Vaibhav Mahapatra.</li>
+          </ul>
+          <p class="cs-owner">The demo shows the app's user interface. Analysis results shown are placeholders, not a working diagnosis.</p>
+        </div>
+        <figure class="cs-fig">
+          <!-- VIDEO: web copy 540x960, 28.9 s, 0.76 MB (source videos/Clarifeye/App_demo.mp4, cropped version). Click to play; not autoplayed because it is teammates' work and context only. -->
+          <video controls muted playsinline preload="none" width="540" height="960" poster="../assets/img/clarifeye/app-demo-poster.jpg" style="width:100%;max-width:260px;height:auto;border:1px solid var(--c-rule);background:#000;" aria-label="Screen recording of the teammates' app: login, image upload, enhancement and an analysis summary screen with placeholder results.">
+            <source src="../assets/video/clarifeye-app-demo.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="fig-label">App UI demo · front end by Mrishika Nair</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="cs-section" id="results" aria-labelledby="results-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Results</p><h2 id="results-title">What was built, and its limit</h2></div><span class="section__index">05</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Hardware</h3>
+          <ul>
+            <li>A fully assembled physical prototype was built: a functional handheld prototype with smartphone-agnostic alignment and axial focus control.</li>
+            <li>Complete CAD of all three subsystems.</li>
+            <li>A lightweight, ergonomic, modular design intended for operation by community health workers.</li>
+          </ul>
+          <h3>Design targets (stated, not formally measured)</h3>
+          <ul>
+            <li><strong>Hardware cost:</strong> under $100. The prototype was very low cost; no bill of materials was produced.</li>
+            <li><strong>Screening time:</strong> designed for &lt;4 min screening. The app workflow demo completes in under 30 s, using the app alone with no fundus hardware attached.</li>
+          </ul>
+          <div class="note-box">
+            <span class="label">Key limitation</span>
+            <ul>
+              <li>The prototype held the correct 20D condenser lens, but without a ring light for illumination the fundus could not be seen, so no retinal image was captured with the hardware. No clinical testing was done.</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="cs-fig">
+          <!-- SOURCE 960x1280 px; shown at ~460 px tall. -->
+          <div class="cs-fig__frame"><img src="../assets/img/clarifeye/view-through-lens.jpg" width="960" height="1280" loading="lazy" style="max-height:520px;width:auto;" alt="View from behind the brown slider arm through the pink lens housing and condenser lens, showing an inverted image of the room."></div>
+          <figcaption><span class="fig-label">Fig. 06: View through the condenser lens</span><span>Inverted room image; no retina imaged</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHALLENGES ============ -->
+  <section class="cs-section" id="challenges" aria-labelledby="challenges-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Engineering challenges</p><h2 id="challenges-title">Design decisions and iterations</h2></div><span class="section__index">06</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Responding to existing adapter designs</h3>
+          <p class="cs-owner">Limitations found in the patent search</p>
+          <ul>
+            <li>Adapters that only fit phones with the camera in one position (top-left corner, or centred) → <strong>X–Y alignment to any camera position.</strong></li>
+            <li>Designs that require a separate ophthalmoscope → <strong>a standalone condenser-lens attachment.</strong></li>
+            <li>A curved design that complicates prototyping and alters camera–lens distance → <strong>a straight, rail-guided axial adjustment.</strong></li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Decisions and iterations</h3>
+          <ul>
+            <li><strong>Fully mechanical:</strong> no electronics in the prototype. A custom ring light was a future concept and was skipped for the course, which is the missing piece needed for the hardware to image the retina.</li>
+            <li><strong>Prototype iteration:</strong> the latest prototype used a commercially available phone mount, with the slider slot attached externally, in place of the custom mount. The X–Y slider and lens housing are identical to the proposed design. Iterating on commercial mounts refined alignment, stability, and usability.</li>
+            <li><strong>Material:</strong> PLA, for weight, strength, ease of replacement and cost.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Takeaways: NOT IN SOURCES (content file line 122), so no Takeaways section on this page. -->
+    </div>
+  </section>
+
+  <!-- ============ CREDITS ============ -->
+  <section class="cs-section" id="credits" aria-labelledby="credits-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Team</p><h2 id="credits-title">Credits</h2></div><span class="section__index">07</span></div>
+      <ul class="credits">
+        <li><span>Vishek Masalia</span><span>Hardware Design Lead (all CAD, 3D printing, prototyping, assembly); patent search.</span></li>
+        <li><span>Niranjani Komethagavel</span><span>Originated the idea; AI/ML and backend; market research.</span></li>
+        <li><span>Vaibhav Mahapatra</span><span>AI/ML and backend; patent search.</span></li>
+        <li><span>Mrishika Nair</span><span>Front-end and mobile app developer; built the app and the working demo; market research.</span></li>
+      </ul>
+      <p class="cs-owner" style="margin-top: var(--sp-4);">Course startup-concept project (EN.520.427); work ended in Dec 2025. Not a medical device and not clinically validated.</p>
+      <div class="cs-nextprev" style="margin-top: var(--sp-6);">
+        <a class="link-arrow" href="ur5e-autonomous-manipulation.html"><span aria-hidden="true">←</span> Project 02: UR5e Manipulation</a>
+        <a class="link-arrow" href="../index.html#projects">All projects <span aria-hidden="true">→</span></a>
+        <!-- TODO (Stage 3+): next-project link once projects/adaptable-pedal-box.html exists -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
