@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grasping Force Feedback for da Vinci Surgical Robots | Vishek Masalia</title>
+  <meta name="description" content="Case study: a 3D-printed, 1:1.2 scale da Vinci-style leader-hand gripper with a capstan drive and Hapkit 3.0 control that renders free-space, soft-tissue and hard-tissue grasping forces. JHU EN.530.691.">
+  <link rel="canonical" href="https://vishekm.github.io/projects/haptic-grasping-feedback.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Grasping Force Feedback for da Vinci Surgical Robots | Vishek Masalia">
+  <meta property="og:description" content="A 3D-printed, capstan-driven haptic gripper that renders free-space, soft-tissue and hard-tissue grasping forces.">
+  <meta property="og:url" content="https://vishekm.github.io/projects/haptic-grasping-feedback.html">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/haptic-grasping-feedback/system-workflow-diagram.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="../index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="../index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html#projects">Projects</a> / Project 01</p>
+      <div class="cs-hero__grid">
+        <div>
+          <div class="project-card__label">
+            <span class="project-card__num">PROJECT 01</span>
+            <span class="label">JHU · EN.530.691 · Aug 2025 – Dec 2025</span>
+          </div>
+          <h1 class="cs-hero__title" id="cs-title">Grasping Force Feedback for da Vinci Surgical Robots</h1>
+          <p class="cs-hero__summary">A 3D-printed, 1:1.2 scale replica of the da Vinci leader-hand gripper, driven by a capstan mechanism and a Hapkit 3.0 board, renders grasping forces that let users tell free space, soft tissue and hard tissue apart.</p>
+          <div class="cs-hero__actions">
+            <a class="btn btn--primary" href="#demo">Watch the demo <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="../docs/reports/haptic_gripper_report.pdf" target="_blank" rel="noopener">Read the report (PDF) <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <aside class="spec" aria-label="Project summary">
+            <div class="spec__head"><span class="label">Project spec</span><span class="label">Completed</span></div>
+            <dl class="spec__rows">
+              <div class="spec__row"><dt>Course</dt><dd>EN.530.691 Haptic Interface Design for Human-Robot Interaction, Johns Hopkins University</dd></div>
+              <div class="spec__row"><dt>Role</dt><dd>Project lead; gripper CAD design, 3D printing, prototyping; co-developed the board code for the tissue states.</dd></div>
+              <div class="spec__row"><dt>Team</dt><dd>4 (credits below)</dd></div>
+              <div class="spec__row"><dt>Status</dt><dd>Working prototype with preliminary results. The user study described in the report was not carried out.</dd></div>
+            </dl>
+          </aside>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame">
+            <!-- LOW-RES SOURCE: 606x462 px. Shown at natural size or smaller, never upscaled. TODO: higher-res CAD render. -->
+            <img src="../assets/img/haptic-grasping-feedback/gripper-cad-annotated.png" width="606" height="462" alt="Annotated CAD render of the haptic gripper: brushed DC motor, linear capstan, pulley, magnet, linkage, slider, fingerpads and Hapkit board mount.">
+          </div>
+          <figcaption><span class="fig-label">Fig. 01: Device CAD model, annotated</span><span>Report Fig. 2</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="cs-section" id="overview" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Overview</p><h2 id="overview-title">At a glance</h2></div><span class="section__index">01</span></div>
+      <div class="stats">
+        <div class="stat"><span class="stat__value">1:1.2</span><span class="stat__label">Scale replica of the da Vinci 3 leader hand gripper</span></div>
+        <div class="stat"><span class="stat__value">3</span><span class="stat__label">Interaction states rendered: free space, soft tissue, hard tissue</span></div>
+        <div class="stat"><span class="stat__value">≤ 5 <small>N</small></span><span class="stat__label">Force limit, enforced in hardware and software</span></div>
+        <div class="stat"><span class="stat__value">R² = 0.9723</span><span class="stat__label">Power-law fit of the force-sensor calibration</span></div>
+      </div>
+      <p class="cs-quote">Robotic minimally invasive surgery lacks grasping force feedback, requiring surgeons to rely solely on visual cues during tissue manipulation.</p>
+    </div>
+  </section>
+
+  <!-- ============ OBJECTIVE ============ -->
+  <section class="cs-section" id="objective" aria-labelledby="objective-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Objective</p><h2 id="objective-title">The problem</h2></div><span class="section__index">02</span></div>
+      <div class="cs-prose">
+        <p>Without force feedback, surgeons may apply excessive or inconsistent grasping forces, which can damage delicate tissues.</p>
+        <p>Prior approaches often rely on wearable pneumatic devices or redesign the surgeon-side master interface entirely. These changes disrupt the familiar ergonomics and would require extensive retraining.</p>
+        <p><strong>Goal:</strong> integrate directly with the existing da Vinci-style leader hand interface without altering its fundamental design, preserving the surgeon's established workflow while adding intuitive, physically grounded haptic cues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section class="cs-section" id="approach" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Approach</p><h2 id="approach-title">How it was built</h2></div><span class="section__index">03</span></div>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Mechanical design</h3>
+          <p class="cs-owner">Vishek: CAD, 3D printing, prototyping · Milla Ivanova helped with CAD</p>
+          <ul>
+            <li>A kinesthetic haptic interface built as a 1:1.2 scale replica of the da Vinci 3 leader hand gripper.</li>
+            <li>The entire mechanical assembly is 3D-printed in PLA: a central linear slider connected to both finger pads through two symmetric linkage assemblies.</li>
+            <li>Capstan drive: a linear rod attaches to a tensioned wire wrapped around a pulley, actuated by a DC motor.</li>
+            <li>Sleeve bearings along the linear capstan rod minimize friction and keep the motion smooth and repeatable.</li>
+            <li>The gripper replica and linkage mount on a base that houses the motor, capstan mechanism and Hapkit board, secured with M4 nuts and bolts.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 624x414 px; labels baked in. Natural size, never upscaled. -->
+          <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/prototype-top-annotated.png" width="624" height="414" loading="lazy" alt="Top view of the red 3D-printed prototype, labelled: rod, wire wound around the capstan, DC motor, motor/gripper mount, linear capstan, Hapkit board, force sensor, fingerpads, touch sensor and state button."></div>
+          <figcaption><span class="fig-label">Fig. 02: Prototype, top view</span><span>Apparatus doc Fig. 2</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split cs-split--flip">
+        <div class="cs-prose">
+          <h3>Electronics and sensing</h3>
+          <ul>
+            <li>A <strong>Hapkit 3.0</strong> board integrates a motor driver and a magnetic-resistive (MR) sensor for motor position encoding. A magnet on the capstan pulley provides the reference for the MR sensor.</li>
+            <li>A force sensor on the right finger pad measures user-applied reaction forces <span class="cs-owner">(FSR: Pattharaphol Chainiwattana)</span>.</li>
+            <li>A touch sensor detects when the gripper is held; haptic feedback is enabled only when touch is detected. When the user lets go, the system returns the gripper to its resting position.</li>
+            <li>A button switches between interaction states.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 676x435 px; labels baked in. Natural size, never upscaled. -->
+          <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/prototype-front-annotated.png" width="676" height="435" loading="lazy" alt="Front view of the prototype on a breadboard, labelled: DC motor, Hapkit board, linear capstan, force sensor, motor/gripper mount, gripper, touch sensor and button for changing states."></div>
+          <figcaption><span class="fig-label">Fig. 03: Prototype, front view</span><span>Apparatus doc Fig. 1</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Software and control</h3>
+          <p class="cs-owner">Team · Vishek co-developed the board code for the tissue states · Milla Ivanova helped with the code · Simulation visuals: Bryanna Stalnaker</p>
+          <ul>
+            <li>Real-time C++ control architecture on the Hapkit 3.0 board for stable haptic feedback.</li>
+            <li>Physically based models (spring, damping, friction, impact) for tissue simulation, rendered through position-based control of the slider: by controlling motor position, the system arrests the slider at designated points to render resistive forces at the fingertips.</li>
+            <li>Signal filtering and state estimation for smooth, noise-robust force output.</li>
+            <li>A real-time Processing simulation receives the Hapkit's position data over USB and drives a virtual gripper that opens and closes with the physical device. When the virtual gripper contacts a simulated object, the software commands the motor to halt the slider.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/processing-simulation.png" width="856" height="571" loading="lazy" alt="Processing simulation: a purple stick-figure gripper and a white circle on a black background, with the text State = Free Space, Force = 0.00 N."></div>
+          <figcaption><span class="fig-label">Fig. 04: Processing simulation</span><span>Report Fig. 3</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SYSTEM / DESIGN ============ -->
+  <section class="cs-section" id="system" aria-labelledby="system-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">System</p><h2 id="system-title">System architecture</h2></div><span class="section__index">04</span></div>
+      <figure class="cs-fig">
+        <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/system-workflow-diagram.png" width="1294" height="735" loading="lazy" alt="Block diagram: the MR sensor, force sensor, touch sensor and button feed the board; the board sends a PWM signal to the motor and connects over USB to the user interface. An inset photo shows the red prototype."></div>
+        <figcaption><span class="fig-label">Fig. 05: (a) Workflow of the grasping force feedback mechanism; (b) prototype</span><span>Report Fig. 1 · board drawn with an Arduino UNO icon; the Hapkit 3.0 is a modified Arduino Uno</span></figcaption>
+      </figure>
+      <div class="cs-split" style="margin-top: var(--sp-6);">
+        <div class="cs-prose">
+          <h3>Signal flow</h3>
+          <ul>
+            <li><strong>Into the board:</strong> MR sensor (position feedback), force sensor (force feedback), touch sensor (touch feedback), button (change state).</li>
+            <li><strong>Out of the board:</strong> a PWM signal to the motor, and USB to the Processing user interface.</li>
+          </ul>
+          <h3>Components</h3>
+          <ul>
+            <li>Custom 3D-printed gripper and motor/gripper mount, Hapkit board, capstan drive with a wire, force sensor, touch sensor, breadboard, resistors, button and wiring.</li>
+            <li>Motor: Micro 6-12V DC Motor, driving the capstan to produce the linear displacement of the rod that generates force feedback at the gripper.</li>
+            <li>Board power: either a Micro-USB connection or a small external power supply.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Safety (≤ 5 N force limit)</h3>
+          <ul>
+            <li><strong>Hardware:</strong> the motor was selected so that no more than 5 N of force can be transmitted to the user. Gripper movement is restricted, and the capstan rod is constrained at both ends, limiting its maximum travel.</li>
+            <li><strong>Materials:</strong> the gripper is PLA, a material safe for contact with skin. The sensors run at low voltage.</li>
+            <li><strong>Software:</strong> the limit is also enforced in software, as an extra precaution against mechanical failure.</li>
+            <li>The device is non-invasive and only comes into contact with the user's fingertips.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPLEMENTATION ============ -->
+  <section class="cs-section" id="implementation" aria-labelledby="implementation-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Implementation</p><h2 id="implementation-title">Force sensing and calibration</h2></div><span class="section__index">05</span></div>
+      <div class="cs-split cs-split--narrow-fig">
+        <div class="cs-prose">
+          <p class="cs-owner">FSR circuit and calibration: Pattharaphol Chainiwattana</p>
+          <p>The force-sensing resistor (FSR) sits in a voltage divider with a 10 kΩ fixed resistor and a 5 V supply. The sensor resistance is computed from the measured output voltage:</p>
+          <div class="eq" role="group" aria-label="Equation 1">
+            <math display="block" aria-label="R sub FSR equals R sub fixed times, open paren, V sub cc over V sub out, minus 1, close paren">
+              <mrow><msub><mi>R</mi><mtext>FSR</mtext></msub><mo>=</mo><msub><mi>R</mi><mtext>fixed</mtext></msub><mo>&#8290;</mo><mrow><mo>(</mo><mfrac><msub><mi>V</mi><mtext>cc</mtext></msub><msub><mi>V</mi><mtext>out</mtext></msub></mfrac><mo>−</mo><mn>1</mn><mo>)</mo></mrow></mrow>
+            </math>
+            <span class="eq__num">Eq. (1)</span>
+          </div>
+          <p>Calibration with known masses was well fitted by a power trendline (report Fig. 5):</p>
+          <!-- NOTE: the report text gives F = a·R^(−b) with "a = 7961.8 and b = -1.034", which is internally inconsistent in sign.
+               The figure's fitted trendline y = 7961.8x^-1.034 is shown here (content file line 131). Flagged to Vishek. -->
+          <div class="eq" role="group" aria-label="Equation 2">
+            <math display="block" aria-label="F equals 7961.8 times R sub FSR to the power minus 1.034">
+              <mrow><mi>F</mi><mo>=</mo><mn>7961.8</mn><mo>&#8290;</mo><msubsup><mi>R</mi><mtext>FSR</mtext><mrow><mo>−</mo><mn>1.034</mn></mrow></msubsup></mrow>
+            </math>
+            <span class="eq__num">R² = 0.9723</span>
+          </div>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 334x442 px line art; shown at natural size. -->
+          <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/fsr-voltage-divider.png" width="334" height="442" loading="lazy" alt="Schematic: 5 V supply, FSR, output node Vout, and a 10 kilo-ohm resistor to ground."></div>
+          <figcaption><span class="fig-label">Fig. 06: FSR voltage divider</span><span>Report Fig. 4</span></figcaption>
+        </figure>
+      </div>
+
+      <figure class="cs-fig" style="margin-top: var(--sp-6); max-width: 760px;">
+        <div class="cs-fig__frame"><img src="../assets/img/haptic-grasping-feedback/fsr-calibration-plot.png" width="985" height="698" loading="lazy" alt="Scatter plot of force in newtons against FSR resistance in ohms with a dotted power trendline, labelled y = 7961.8x^-1.034, R squared = 0.9723."></div>
+        <figcaption><span class="fig-label">Fig. 07: Force vs resistance of FSR</span><span>Report Fig. 5</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="cs-section" id="results" aria-labelledby="results-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Results</p><h2 id="results-title">Measured forces</h2></div><span class="section__index">06</span></div>
+      <div class="stats">
+        <div class="stat"><span class="stat__value">0-0.05 <small>N</small></span><span class="stat__label">Free space</span></div>
+        <div class="stat"><span class="stat__value">1-3 <small>N</small></span><span class="stat__label">Soft tissue</span></div>
+        <div class="stat"><span class="stat__value">2-4 <small>N</small></span><span class="stat__label">Hard tissue</span></div>
+      </div>
+      <div class="cs-split">
+        <table class="data-table">
+          <caption>Table 1. Force in different states (measured in the real system)</caption>
+          <thead><tr><th scope="col">State</th><th scope="col">Stiffness (N/m)</th><th scope="col">Force (N)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Free-Space</th><td class="num">0</td><td class="num">0-0.05</td></tr>
+            <tr><th scope="row">Soft-Tissue</th><td class="num">200</td><td class="num">1-3</td></tr>
+            <tr><th scope="row">Hard-Tissue</th><td class="num">600</td><td class="num">2-4</td></tr>
+          </tbody>
+        </table>
+        <div class="cs-prose">
+          <ul>
+            <li>Free-space force was approximately 0 N, with only internal friction present.</li>
+            <li>The soft- and hard-tissue force ranges overlapped somewhat, reflecting variability in contact conditions and sensor nonlinearity.</li>
+            <li>Because of the system's nonlinear behaviour and time-varying finger position, the measured force fluctuated and could only be represented as a range rather than a single value.</li>
+          </ul>
+          <h3>Qualitative</h3>
+          <ul>
+            <li>Preliminary results show that the system can distinguish free-space, soft-tissue, and hard-tissue interactions.</li>
+            <li>Smooth mechanical performance of the fully 3D-printed capstan-linkage system.</li>
+            <li>Delivered a fully functional working prototype despite time constraints (see the demo video).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHALLENGES ============ -->
+  <section class="cs-section" id="challenges" aria-labelledby="challenges-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Engineering challenges</p><h2 id="challenges-title">Challenges and design decisions</h2></div><span class="section__index">07</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Challenges</h3>
+          <ul>
+            <li><strong>Force ripple:</strong> the team identified motor commutation granularity (brushed DC motor) as the primary source of residual force ripple.</li>
+            <li><strong>Overlapping force ranges:</strong> soft- and hard-tissue ranges overlapped because of variability in contact conditions and sensor nonlinearity.</li>
+            <li><strong>Position sensing:</strong> the MR sensor, while functional, requires periodic recalibration and is prone to position drift.</li>
+            <li><strong>Mechanism:</strong> the linkage and slider assembly should be redesigned to reduce friction and eliminate singular configurations that limit controllability.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Design decisions</h3>
+          <ul>
+            <li>Keep the da Vinci leader-hand form instead of a wearable or redesigned interface, to avoid surgeon retraining.</li>
+            <li>Enforce the 5 N limit in software as well as hardware.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box">
+        <span class="label">Proposed in the report · not carried out</span>
+        <ul>
+          <li>Hardware: a brushless DC motor for smoother, more precise force rendering; a higher-resolution, more robust encoder in place of the MR sensor; a redesigned linkage, slider and slider travel.</li>
+          <li>Software: replace the Processing stick-figure visualization with a higher-fidelity physics and graphics engine.</li>
+          <li>A psychophysics just-noticeable-difference (JND) user study was planned; no user study was run.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAKEAWAYS ============ -->
+  <section class="cs-section" id="takeaways" aria-labelledby="takeaways-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Takeaways</p><h2 id="takeaways-title">What it showed</h2></div><span class="section__index">08</span></div>
+      <div class="cs-prose">
+        <p class="cs-quote">These findings demonstrate the feasibility of adding intuitive grasping force feedback to a da Vinci-style interface, with future work focused on hardware refinement, improved sensing, and user-study evaluation.</p>
+        <p>Established a clear path to smoother force rendering: a brushless motor and higher-resolution actuation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO + LINKS ============ -->
+  <section class="cs-section" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Demo &amp; documents</p><h2 id="demo-title">See it working</h2></div><span class="section__index">09</span></div>
+      <div class="cs-split">
+        <!-- YouTube click-to-load facade (js/main.js). Aspect ratio of this video not confirmed; 16:9 container assumed. -->
+        <div class="yt" data-yt-id="LLw-7AmbKPg" data-yt-title="Grasping force feedback gripper: demo video">
+          <img src="https://i.ytimg.com/vi/LLw-7AmbKPg/hqdefault.jpg" width="480" height="360" loading="lazy" alt="Video thumbnail: haptic gripper demo">
+          <button class="yt__btn" type="button" aria-label="Play demo video"><span>▶ Play demo video</span></button>
+        </div>
+        <div>
+          <ul class="links-list">
+            <li><span class="label">Video</span><a href="https://www.youtube.com/watch?v=LLw-7AmbKPg" target="_blank" rel="noopener">Demo video on YouTube ↗</a></li>
+            <li><span class="label">Report</span><a href="../docs/reports/haptic_gripper_report.pdf" target="_blank" rel="noopener">Grasping Force Feedback for da Vinci Surgical Robots (PDF, 3 pages) ↗</a></li>
+            <li><span class="label">Apparatus</span><a href="../docs/supplement/haptic_gripper_experiment_apparatus_description.pdf" target="_blank" rel="noopener">Experimental apparatus description (PDF, 4 pages) ↗</a></li>
+          </ul>
+          <p class="cs-owner" style="margin-top: var(--sp-3);">Note: the report PDF prints the stiffness unit as kN/m; the correct unit is N/m (used on this page).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CREDITS ============ -->
+  <section class="cs-section" id="credits" aria-labelledby="credits-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Team</p><h2 id="credits-title">Credits</h2></div><span class="section__index">10</span></div>
+      <ul class="credits">
+        <li><span>Vishek Masalia</span><span>Project lead; gripper CAD design, 3D printing, prototyping; co-developed the board code for the tissue states.</span></li>
+        <li><span>Pattharaphol Chainiwattana</span><span>FSR force sensing (circuit and calibration).</span></li>
+        <li><span>Milla Ivanova</span><span>Helped with the code and CAD.</span></li>
+        <li><span>Bryanna Stalnaker</span><span>Report and simulation visuals.</span></li>
+      </ul>
+      <p class="cs-owner" style="margin-top: var(--sp-4);">Course project. "da Vinci" is a trademark of Intuitive Surgical; this is an independent da Vinci-style replica with no affiliation implied.</p>
+      <div class="cs-nextprev" style="margin-top: var(--sp-6);">
+        <a class="link-arrow" href="../index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+        <!-- TODO (Stage 3+): next-project link once projects/ur5e-autonomous-manipulation.html exists -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
