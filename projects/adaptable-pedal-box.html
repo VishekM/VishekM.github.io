@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adaptable Pedal Box for FSAE Combustion and Electric Cars | Vishek Masalia</title>
+  <meta name="description" content="Case study: a baseplate-mounted FSAE pedal box that fits both combustion and electric Formula cars, simulated at the 2 kN brake pedal load case and built as a functional prototype. UIC senior design; Best in Show (Mechanical &amp; Industrial), UIC Engineering Expo.">
+  <link rel="canonical" href="https://vishekm.github.io/projects/adaptable-pedal-box.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Adaptable Pedal Box for FSAE Combustion and Electric Cars | Vishek Masalia">
+  <meta property="og:description" content="One baseplate-mounted pedal box for both combustion and electric Formula SAE cars.">
+  <meta property="og:url" content="https://vishekm.github.io/projects/adaptable-pedal-box.html">
+  <meta property="og:image" content="https://vishekm.github.io/assets/img/adaptable-pedal-box/pedal-box-cad-annotated.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===================== SHARED: HEADER (start) =====================
+     Canonical copy: partials/header.html. Keep identical on every page;
+     only the relative path prefix ({{ROOT}}) changes per folder depth.  -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Vishek Masalia, home">
+      <span class="brand__name">Vishek Masalia</span>
+      <span class="brand__sub">M.S.E. Robotics · JHU</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="../index.html#about">About</a></li>
+        <li><a class="site-nav__link" href="../index.html#contact">Contact</a></li>
+        <li><a class="btn btn--primary" href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===================== SHARED: HEADER (end) ===================== -->
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html#projects">Projects</a> / Project 04</p>
+      <div class="cs-hero__grid">
+        <div>
+          <div class="project-card__label">
+            <span class="project-card__num">PROJECT 04</span>
+            <span class="label">UIC Senior Design · Aug 2023 – May 2024</span>
+          </div>
+          <h1 class="cs-hero__title" id="cs-title">Adaptable Pedal Box for FSAE Combustion and Electric Cars</h1>
+          <p class="cs-hero__summary">A pedal box built on a single mountable baseplate so the same unit can be fitted to both UIC's combustion and electric Formula SAE cars, designed through brake-geometry calculations, CAD iterations and 2 kN FEA load cases, and demonstrated as a functional prototype that won Best in Show (Mechanical &amp; Industrial) at the UIC Engineering Expo.</p>
+          <div class="cs-hero__actions">
+            <a class="btn btn--primary" href="#demo">Watch the prototype <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="#fea">See the FEA <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="spec" aria-label="Project summary">
+            <div class="spec__head"><span class="label">Project spec</span><span class="label">Completed</span></div>
+            <dl class="spec__rows">
+              <div class="spec__row"><dt>Context</dt><dd>UIC Mechanical &amp; Industrial Engineering senior design, two semesters. Faculty advisor: Dr. Jonathan Komperda. Designed for the UIC Formula SAE team's cars.</dd></div>
+              <div class="spec__row"><dt>Role</dt><dd>Mechanical Design &amp; Prototyping Engineer: majority of the CAD; all prototyping and assembly.</dd></div>
+              <div class="spec__row"><dt>Team</dt><dd>4 (credits below)</dd></div>
+              <div class="spec__row"><dt>Recognition</dt><dd>Best in Show, Mechanical and Industrial category, UIC Engineering Expo</dd></div>
+            </dl>
+          </aside>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame">
+            <!-- SOURCE 926x694 px (white margins cropped from the 1920x1080 original). Natural size or smaller, never upscaled. -->
+            <img src="../assets/img/adaptable-pedal-box/pedal-box-cad-annotated.jpg" width="926" height="694" alt="Annotated CAD render of the final pedal box: brake and gas pedals, master cylinders, fluid reservoir mount, master cylinder tab, BOTS tab, brake tab, baseplate, throttle stops, throttle sensors, throttle tab and legs.">
+          </div>
+          <figcaption><span class="fig-label">Fig. 01: Final pedal box CAD, annotated</span><span>BOTS = Brake Over-Travel Switch</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="cs-section" id="overview" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Overview</p><h2 id="overview-title">At a glance</h2></div><span class="section__index">01</span></div>
+      <div class="stats">
+        <div class="stat"><span class="stat__value">2 <small>kN</small></span><span class="stat__label">FSAE brake pedal load case, simulated in ANSYS</span></div>
+        <div class="stat"><span class="stat__value">304.54 → 191.25 <small>g</small></span><span class="stat__label">Brake pedal mass across the design iterations</span></div>
+        <div class="stat"><span class="stat__value">5:1</span><span class="stat__label">Brake pedal ratio</span></div>
+        <div class="stat"><span class="stat__value">2 cars</span><span class="stat__label">One baseplate unit for the combustion and electric Formula cars</span></div>
+      </div>
+      <p class="cs-quote">Most SAE Formula pedal boxes are either for combustion cars or electric cars, but there wasn't one that works for both.</p>
+    </div>
+  </section>
+
+  <!-- ============ OBJECTIVE ============ -->
+  <section class="cs-section" id="objective" aria-labelledby="objective-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Objective</p><h2 id="objective-title">The problem</h2></div><span class="section__index">02</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <p>SAE @ UIC was designing its first electric racecar, with plans to retrofit an EV powertrain into the existing combustion car.</p>
+          <p>The existing pedal box had insufficient brake pedal stiffness and considerable deformation and torsion in certain sections. As a result, the bias bar assembly bent excessively, causing an undesired increase in braking bias toward the rear wheels, which risks wheel lock-up and loss of control.</p>
+          <p><strong>Goal:</strong> a more robust and structurally sound pedal box that removes the observed deformation, fits in the current frame, and doesn't compromise the frame's integrity.</p>
+          <h3>How it is adaptable</h3>
+          <ul>
+            <li>Both cars use a fixed frame design for the nose, so the same pedal box attaches to either car.</li>
+            <li>The whole assembly sits on a single baseplate that can be removed from the combustion car and used again on the electric car. It includes the throttle sensors and uses the same braking for both.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 428x395 px, cropped from the draft report render. Natural size. -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/fig1-previous-pedal-box-photo-annotated.png" width="428" height="395" loading="lazy" alt="Photo of the previous pedal box with red labels: throttle cable, master cylinders, pushrod assembly, BOTS, pedal return springs and positive stop."></div>
+          <figcaption><span class="fig-label">Fig. 02: The previous pedal box</span><span>The problem</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section class="cs-section" id="approach" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Approach</p><h2 id="approach-title">How it was designed</h2></div><span class="section__index">03</span></div>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Requirements and concept selection</h3>
+          <ul>
+            <li>Literature review of prior FSAE pedal boxes (Univ. of Akron, Univ. of Western Macedonia, Univ. of Mumbai, WPI, Tilton).</li>
+            <li>Rules self-checked against the FSAE rulebook, including the brake over-travel switch and pedal spacing.</li>
+            <li>QFD, objective tree and function-means tree, then four concepts scored in a decision matrix. The selected concept (Option 1) scored 27.6 of 45, ahead of 27.1, 26.3 and 17.7.</li>
+            <li>Adjustability was dropped: the frame allows only a 35 mm adjustment range, and the feature would weaken the structure.</li>
+          </ul>
+          <h3>Selected brake layout</h3>
+          <p>Pushrod and bias bar above the pedal pivot, with the master cylinders on pivoting mounts. In the sketch, A and D are hinges that let the pedal and cylinder rotate, B is where the master cylinder attaches, and C is the master cylinder.</p>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 333x367 px. Natural size, never upscaled. -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/brake-layout-concept.png" width="333" height="367" loading="lazy" alt="Side-view concept sketch of the brake layout: a vertical pedal with hinge A at the bottom, master cylinder attachment B above it, master cylinder C angled down to hinge D."></div>
+          <figcaption><span class="fig-label">Fig. 03: Selected brake layout (Option 1)</span><span>A, D hinges · B attachment · C master cylinder</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split cs-split--flip">
+        <div class="cs-prose">
+          <h3>Brake geometry</h3>
+          <p class="cs-owner">Force and moment calculations: Nick Whitney</p>
+          <div class="eq" role="group" aria-label="Equation 1">
+            <math display="block"><mrow><mi>F</mi><mo>=</mo><mfrac><mi>R</mi><mtext>Pedal Ratio</mtext></mfrac></mrow></math>
+            <span class="eq__num">Eq. (1)</span>
+          </div>
+          <div class="eq" role="group" aria-label="Equation 2">
+            <math display="block"><mrow><mtext>Pedal Ratio</mtext><mo>=</mo><mfrac><mi>a</mi><mrow><mi>b</mi><mo>&#8290;</mo><mi>cos</mi><mo>&#8289;</mo><mi>θ</mi></mrow></mfrac></mrow></math>
+            <span class="eq__num">Eq. (2) · small-angle assumption</span>
+          </div>
+          <ul>
+            <li>Pedal ratio 5:1; master cylinder maximum stroke 1.1 inches (27.94 mm).</li>
+            <li>Final geometry (pedal shortened by 25.4 mm after the first test fit): L<sub>p</sub> = 266.70 mm, L<sub>b</sub> = 64.83 mm, L<sub>h</sub> = 130.61 mm.</li>
+            <li>Calculated reactions at F<sub>max</sub> = 2000 N: master cylinder F<sub>MC</sub> = 8420.52 N; pivot R<sub>y</sub> = 1791.81 N, R<sub>x</sub> = 6227.67 N.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/fig9-initial-brake-geometry-sketch.png" width="816" height="455" loading="lazy" alt="Dimensioned SolidWorks 2D sketches of the brake pedal geometry in the uncompressed and compressed positions."></div>
+          <figcaption><span class="fig-label">Fig. 04: Brake geometry sketches</span><span>Initial geometry, before the pedal was shortened</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Baseplate and mounting</h3>
+          <p class="cs-owner">Majority of the CAD: Vishek · Gas and brake pedal CAD: Jonathan Simon</p>
+          <ul>
+            <li>Mounting: 4130 steel square tubing, 1" outer diameter and 0.049" wall, welded into the frame. Changing from round to square tubing addresses the torsion issue.</li>
+            <li>Four main baseplate iterations (V1–V4), driven mostly by simulations showing stress too high or factor of safety too low, plus dimension and measurement errors.</li>
+          </ul>
+          <table class="data-table" style="margin-top: var(--sp-3);">
+            <caption>Baseplate iterations (draft report)</caption>
+            <thead><tr><th scope="col">Version</th><th scope="col">Key change</th><th scope="col">Mass</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">V1</th><td>Rectangular plate with welded legs and tabs; aluminum chosen over steel (2.11 lbs vs 6.12 lbs)</td><td class="num">2.11 lbs</td></tr>
+              <tr><th scope="row">V2</th><td>Area reduced about 16%; L-shaped plus short legs; 3.175 mm thick</td><td class="num">—</td></tr>
+              <tr><th scope="row">V3</th><td>Thinner tabs, doubled leg thickness, sloped brake tabs</td><td class="num">2.35 lbs</td></tr>
+              <tr><th scope="row">V4</th><td>Fully fastened (no welding), pocketed, wider tab spacing</td><td class="num">2.04 lbs</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <!-- LOW-RES SOURCES: 487x333, 429x219, 491x282 px, cropped from the draft report render. Shown at natural size or smaller. -->
+          <figure class="cs-fig">
+            <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/baseplate-v1-v2-cad.png" width="487" height="333" loading="lazy" alt="CAD of baseplate V1 with large tabs, and V2 with L-shaped legs and short legs."></div>
+            <figcaption><span class="fig-label">Fig. 05: Baseplate V1 and V2</span></figcaption>
+          </figure>
+          <figure class="cs-fig" style="margin-top: var(--sp-4);">
+            <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/baseplate-v3-cad.png" width="429" height="219" loading="lazy" alt="CAD of baseplate V3."></div>
+            <figcaption><span class="fig-label">Fig. 06: Baseplate V3</span></figcaption>
+          </figure>
+          <figure class="cs-fig" style="margin-top: var(--sp-4);">
+            <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/baseplate-v4-fastened-cad.png" width="491" height="282" loading="lazy" alt="CAD of baseplate V4 with fastened tabs, new gas pedal tabs and pocketing."></div>
+            <figcaption><span class="fig-label">Fig. 07: Baseplate V4, fully fastened</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="cs-split cs-split--flip cs-split--narrow-fig" style="grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);">
+        <div class="cs-prose">
+          <h3>Final components</h3>
+          <ul>
+            <li><strong>Baseplate (V4):</strong> fully fastenable, with angle-aluminum tabs and legs screwed to a pocketed 6061-T6 plate; gas pedal tabs enlarged for the throttle sensors.</li>
+            <li><strong>BOTS (Brake Over-Travel Switch):</strong> mounted below the pivot, in front of the pedal, with a footrest covering it so the driver cannot actuate it by accident.</li>
+            <li><strong>Throttle stops:</strong> the negative stop is a flat edge on the gas pedal that hits the baseplate; the positive stop is an adjustable bolt in a tapped hole in the baseplate.</li>
+            <li><strong>Gas pedal:</strong> a curved design for foot clearance, with a support for the return spring and throttle cable.</li>
+            <li><strong>Fluid reservoir mounts:</strong> sheet-metal holders fastened to the baseplate so they are easy to remove for repair.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <!-- LOW-RES SOURCE: 214x523 px. Natural size. -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/gas-pedal-iter2-render.png" width="214" height="523" loading="lazy" alt="Render of the curved gas pedal, iteration 2."></div>
+          <figcaption><span class="fig-label">Fig. 08: Gas pedal, iteration 2</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEA ============ -->
+  <section class="cs-section" id="fea" aria-labelledby="fea-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Implementation · Simulation</p><h2 id="fea-title">FEA at the 2 kN load case</h2></div><span class="section__index">04</span></div>
+      <p class="cs-owner">All FEA / ANSYS simulations: Pranav Vora · loads from Nick Whitney's calculations</p>
+
+      <div class="cs-split" style="grid-template-columns: 1fr;">
+        <div class="cs-prose">
+          <p>ANSYS static structural analysis with the 2 kN FSAE brake pedal load case (simulated). The values listed are for the final design; Figs. 09–10 show the draft report's iteration 3.</p>
+          <h3>Brake pedal</h3>
+          <ul>
+            <li>Final design ("Pedal V5.3"): max von Mises stress 2.6978×10<sup>8</sup> Pa; min safety factor 0.96077; max total deformation 0.002402 m.</li>
+            <li>Brake pedal iteration 1 showed stress concentration at the sharp corners of the pocketing; later iterations added fillets and a face offset.</li>
+          </ul>
+        </div>
+        <figure class="cs-fig">
+          <!-- Composite of the four original Fig. 26 images extracted from the draft .docx (407x696, 583x643, 318x650, 232x652), set to 640 px tall. Composite 1615x688. -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/brake-pedal-iter3-cad.png" width="1615" height="688" loading="lazy" alt="Brake pedal CAD, final draft iteration: dimensioned side drawing (266.70 mm overall, 64.83 mm pivot to bias bar, 12 mm pivot hole), two close-ups of the pocketing with fillet radii, and a render of the pocketed pedal."></div>
+          <figcaption><span class="fig-label">Fig. 09: Brake pedal CAD, iteration 3 (draft report)</span><span>Dimensions in mm</span></figcaption>
+        </figure>
+        <figure class="cs-fig" style="margin-top: var(--sp-6);">
+          <!-- Composite of the original Fig. 28 plots from the draft .docx (stress 1026x1090, safety factor 728x775, deformation 1026x1090), 770 px tall. Composite 2269x818.
+               NOTE: these are the draft's Iteration 3 ("Pedal V3") results; the page text lists the final V5.3 values (content file lines 5, 107). -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/brake-pedal-iter3-fea.png" width="2269" height="818" loading="lazy" alt="Three ANSYS plots of brake pedal iteration 3 from the draft report: equivalent von Mises stress, safety factor, and total deformation."></div>
+          <figcaption><span class="fig-label">Fig. 10: Brake pedal FEA, iteration 3 (draft report): stress, safety factor, deformation</span><span>Final V5.3 values are listed above</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split cs-split--flip">
+        <div class="cs-prose">
+          <h3>Base plate ("FT1 2kn")</h3>
+          <ul>
+            <li>Max total deformation: 0.030497 in</li>
+            <li>Min safety factor: 0.75163</li>
+          </ul>
+          <div class="note-box">
+            <span class="label">Safety factor below 1</span>
+            <ul>
+              <li>Both final parts have a minimum safety factor below 1 at the 2 kN rule load (0.75163 and 0.96077). The team's draft argues that a 2 kN input is almost twice what a typical driver is capable of applying (~900 N).</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="cs-fig">
+          <!-- SOURCE 695x788 px; slightly soft but legible (content file line 151). -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/base-plate-fea.png" width="695" height="788" loading="lazy" style="max-height:620px;width:auto;" alt="Two ANSYS plots of the base plate (FT1 2kn): total deformation with a maximum of 0.030497 inches, and safety factor with a minimum of 0.75163."></div>
+          <figcaption><span class="fig-label">Fig. 11: Base plate FEA: deformation, safety factor</span><span>ANSYS · 2 kN</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROTOTYPE + VIDEO ============ -->
+  <section class="cs-section" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Prototype</p><h2 id="demo-title">Functional prototype in the car frame</h2></div><span class="section__index">05</span></div>
+      <p class="cs-owner">All prototyping and assembly: Vishek</p>
+      <div class="cs-shorts">
+        <figure class="cs-fig" style="width: 360px;">
+          <!-- SOURCE 960x1280 px; shown at ~360 px wide. -->
+          <div class="cs-fig__frame"><img src="../assets/img/adaptable-pedal-box/prototype-in-car.jpg" width="960" height="1280" loading="lazy" alt="The prototype mounted in the white tubular car frame: clear acrylic pedal faces on black pedal arms, white 3D-printed mounts and master cylinders."></div>
+          <figcaption><span class="fig-label">Fig. 12: Prototype in the car frame</span><span>Laser-cut acrylic, 3D-printed parts</span></figcaption>
+        </figure>
+        <figure class="cs-fig">
+          <!-- Portrait YouTube Short, click-to-load facade (js/main.js). -->
+          <div class="yt yt--short" data-yt-id="MlWG3QijzkE" data-yt-title="Pedal box prototype in the car frame">
+            <img src="https://i.ytimg.com/vi/MlWG3QijzkE/hqdefault.jpg" width="480" height="360" loading="lazy" alt="Video thumbnail: pedal box prototype in the car frame">
+            <button class="yt__btn" type="button" aria-label="Play prototype video"><span>▶ Play video</span></button>
+          </div>
+          <figcaption><span class="fig-label">Fit in the frame; BOTS actuated</span><a href="https://youtube.com/shorts/MlWG3QijzkE" target="_blank" rel="noopener">YouTube ↗</a></figcaption>
+        </figure>
+        <div class="cs-prose" style="flex: 1 1 280px;">
+          <ul>
+            <li>A functional prototype built from laser-cut acrylic and 3D-printed parts.</li>
+            <li>It was test-fitted in the car frame, and the brake over-travel switch was actuated (video).</li>
+            <li>Never manufactured in metal.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section class="cs-section" id="results" aria-labelledby="results-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Results</p><h2 id="results-title">Outcome</h2></div><span class="section__index">06</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <h3>Simulated</h3>
+          <ul>
+            <li>Simulated at the 2 kN FSAE load case; iterated to reduce mass from 304.54 g to 191.25 g.</li>
+            <li>Final minimum safety factors: base plate 0.75163, brake pedal 0.96077.</li>
+          </ul>
+          <h3>Prototype and packaging</h3>
+          <ul>
+            <li>Functional prototype test-fitted in the car frame, with the brake over-travel switch actuated.</li>
+            <li>One unit designed to fit both the combustion and electric cars.</li>
+            <li>Rules self-checked against the FSAE rulebook (brake over-travel switch, pedal spacing).</li>
+            <li>Test-fit measurement: brake pedal face about 918 mm from the car seat, leaving only 3 mm against the 915 mm requirement. No change was made afterwards.</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <h3>Recognition</h3>
+          <p class="cs-quote">Best in Show, Mechanical and Industrial category, UIC Engineering Expo. Two projects were selected; this was one of them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHALLENGES ============ -->
+  <section class="cs-section" id="challenges" aria-labelledby="challenges-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Engineering challenges</p><h2 id="challenges-title">Challenges and design decisions</h2></div><span class="section__index">07</span></div>
+      <div class="cs-split">
+        <div class="cs-prose">
+          <ul>
+            <li><strong>Strength vs. mass:</strong> both final parts have a minimum safety factor below 1 at the 2 kN rule load (0.75163 and 0.96077).</li>
+            <li><strong>First test fit failed:</strong> the vertical footprint of the brake pedal geometry was too large for the frame of the F23, so the pedal was shortened by 25.4 mm.</li>
+            <li><strong>Welded to fastened:</strong> welding risked distortion, dimensional inaccuracy and skilled labor costs, so the team made the design fully fastenable. A cost comparison found the fastened design more cost effective.</li>
+            <li><strong>Material:</strong> 6061-T6 aluminum instead of steel, to save weight (steel baseplate about 6.12 lbs vs aluminum 2.11 lbs).</li>
+          </ul>
+        </div>
+        <div class="cs-prose">
+          <ul>
+            <li><strong>Brake pedal iteration 1:</strong> stress concentration at the sharp corners of the pocketing, and a flat face meant the base of the driver's foot would hit the pedal. Later iterations added fillets and a face offset.</li>
+            <li><strong>Gas pedal:</strong> iteration 1 was too tall in the car and its offset was not comfortable for drivers, so iteration 2 used a curved shape.</li>
+            <li><strong>Adjustability excluded:</strong> the 35 mm range was too small and the feature would weaken the structure.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Takeaways: NOT IN SOURCES (content file line 139), so no Takeaways section on this page. -->
+    </div>
+  </section>
+
+  <!-- ============ CREDITS ============ -->
+  <section class="cs-section" id="credits" aria-labelledby="credits-title">
+    <div class="container">
+      <div class="cs-section__head"><div><p class="eyebrow">Team</p><h2 id="credits-title">Credits</h2></div><span class="section__index">08</span></div>
+      <ul class="credits">
+        <li><span>Vishek Masalia</span><span>Majority of the CAD; all prototyping and assembly.</span></li>
+        <li><span>Jonathan Simon</span><span>FSAE rules guidance; CAD of the gas and brake pedals; project coordination.</span></li>
+        <li><span>Nick Whitney</span><span>Coordinated with the brake team; force and moment calculations for the design and the simulations.</span></li>
+        <li><span>Pranav Vora</span><span>All FEA / ANSYS simulations.</span></li>
+      </ul>
+      <p class="cs-owner" style="margin-top: var(--sp-4);">UIC Mechanical &amp; Industrial Engineering senior design. Faculty advisor: Dr. Jonathan Komperda.</p>
+      <div class="cs-nextprev" style="margin-top: var(--sp-6);">
+        <a class="link-arrow" href="clarifeye.html"><span aria-hidden="true">←</span> Project 03: Clarifeye</a>
+        <a class="link-arrow" href="../index.html#projects">All projects <span aria-hidden="true">→</span></a>
+        <!-- TODO (Stage 3+): next-project link once projects/autonomous-writing-device.html exists -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== SHARED: FOOTER (start) =====================
+     Canonical copy: partials/footer.html. Keep identical on every page. -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© <span data-year>2026</span> Vishek Masalia</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:vishekmasalia@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vishekmasalia" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="../docs/resume/MasterResumeOct26.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#main">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- ===================== SHARED: FOOTER (end) ===================== -->
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
